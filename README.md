@@ -868,12 +868,12 @@ C)Greey graph alogorithms（use OLC or DBG）
 ## 51、文献检索、下载
 
 （1）Library Genesis
-1.http://gen.lib.rus.ec（该网址速度比较快）
-2.http://libgen.io（该网址速度较慢）
-3.http://libgen.io/scimag/（该网址主要用于检索文章）
+1. http://gen.lib.rus.ec（该网址速度比较快）
+2. http://libgen.io（该网址速度较慢）
+3. http://libgen.io/scimag/（该网址主要用于检索文章）
 
 （2）Sci-hub
-http://tool.yovisun.com/scihub/
-http://sci-hub.tw/
-https://sci-hub.shop/
-https://sci-hub.org.cn/
+- http://tool.yovisun.com/scihub/
+- http://sci-hub.tw/
+- https://sci-hub.shop/
+- https://sci-hub.org.cn/
