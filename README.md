@@ -788,12 +788,18 @@ Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php 
 
 
 拓展：
+
 （1）SSR/STR分型
+
 解决方法如下：
+
 1.首先要确定研究的物种是什么？有很多物种是已经有文献发表的SSR序列，同时又对应的引物序列供参考。这种的比较简单，不用自己设计引物。但尽量选择文献报道，比较多的多态性好的位点。比如：大豆的SSR位点，对应的引物序列也有，但文献一般发表的位点有哪些，哪些位点做了很多研究，多态性比较好，尽量选择这样的位点。
+
 2.所研究的物种，没有文献报道。这样的话，比较麻烦，需要自己开发SSR引物。首先，你要从该物种的基因组序列中，筛选STR位点。具体方法有很多，比较：富集文库的方法，SSR-Hunter软件，等，有很多SSR引物开发的方法和资料。从基因组序列上选择来讲，尽量选择不连锁的位点。筛选出重复序列的位点后，要对位点的多态性检测。最终筛出的位点：不连锁、多态性好、易扩增。
+
 3.ABI3730上，最终上机是检测荧光信号，引物5‘端荧光标记，这个检测量和速度很快，成本高，只有筛好引物，后续批量实验时，再上机。前期引物筛选，还是用普通引物（不带标记），跑PAGE胶，取20个左右样本，大概看下扩增片段，多态性，即可。
-首先你要有序列，不知你做的是什么物种。把这些序列输入到在线的：http://www.genomics.ceh.ac.uk/cgi-bin/msatfinder/msatfinder.cgi网站中，确定微卫星所在的位置；然后在微卫星序列两翼设计引物。
+
+首先你要有序列，不知你做的是什么物种。把这些序列输入到在线的：http://www.genomics.ceh.ac.uk/cgi-bin/msatfinder/msatfinder.cgi 网站中，确定微卫星所在的位置；然后在微卫星序列两翼设计引物。
 
 
 ## 45、viewer
@@ -831,6 +837,7 @@ Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php 
 果蝇数据库：http://flybase.org/
 
 酵母数据库：https://www.yeastgenome.org/
+
 下载酵母数据：https://www.yeastgenome.org/download-data
 
 
@@ -856,11 +863,17 @@ Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php 
 5. Shorty
 
 组装的算法：
+
 A）overlap/layout/Consensus(OLC)methods (rely on an overlap graph)
+
 软件有：CABOG 、Newbler、Shorty、Edena
-B)De Bruijn Graph(DBG) methods(use some form of K-mer graph)
+
+B)De Bruijn Graph(DBG) methods(use some form of K-mer graph)\
+
 软件:SOAPdenovo、Euler、Velvet
+
 C)Greey graph alogorithms（use OLC or DBG）
+
 软件：SSAKE、SHARCGS、VCAKE
 
 
