@@ -890,3 +890,6 @@ C)Greey graph alogorithms（use OLC or DBG）
 - http://sci-hub.tw/
 - https://sci-hub.shop/
 - https://sci-hub.org.cn/
+
+（3）BGPT MCP
+- https://github.com/connerlambden/bgpt-mcp ：MCP server for searching scientific papers with full-text experimental data. Supports SSE and Streamable HTTP endpoints.
