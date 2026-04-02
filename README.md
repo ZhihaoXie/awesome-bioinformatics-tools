@@ -308,6 +308,8 @@ pal2nal：http://www.bork.embl.de/pal2nal/
 
 
 ## 8、SNP/indel calling
+
+- Genomic Agent Discovery（https://github.com/HelixGenomics/Genomic-Agent-Discovery）：多智能体AI系统，分析原始DNA文件（23andMe、AncestryDNA、VCF），跨12个公共基因组数据库（ClinVar、GWAS、AlphaMissense、CPIC、gnomAD等）。基于MCP协议的智能体协作。MIT开源协议。
 - Dindel（http://sites.google.com/site/keesalbers/soft/dindel）：小的插入/缺失发现
 - Pindel（http://gmt.genome.wustl.edu/packages/pindel/）：小的插入/缺失发现
 - Samtools（http://samtools.sourceforge.net 或者 http://www.htslib.org/）：mapping后数据分析的工具
