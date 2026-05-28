@@ -892,4 +892,4 @@ C)Greey graph alogorithms（use OLC or DBG）
 - https://sci-hub.org.cn/
 
 （3）BGPT MCP
-- https://github.com/connerlambden/bgpt-mcp ：MCP server for searching scientific papers with full-text experimental data. Supports SSE and Streamable HTTP endpoints.
+- https://github.com/connerlambden/bgpt-mcp ：BGPT API - REST/Python and MCP scientific paper search returning structured experimental evidence, limitations, conflicts of interest, and data/code availability fields. MCP server for searching scientific papers with full-text experimental data. Supports SSE and Streamable HTTP endpoints.
