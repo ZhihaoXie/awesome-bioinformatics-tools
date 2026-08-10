@@ -827,7 +827,7 @@ Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php 
 - PathSeq：用PathSeq进行跨物种污染识别
   https://software.broadinstitute.org/gatk/blog?id=23205
   ftp://ftp.broadinstitute.org/bundle/pathseq/
-
+- SeqBench：https://seqbench.com/  A browser-based toolbox for everyday DNA, RNA, and protein sequence tasks.
 
 ## 48、基因结构分析
 - GSDS：http://gsds.cbi.pku.edu.cn/
