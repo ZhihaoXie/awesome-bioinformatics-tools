@@ -15,6 +15,7 @@ A curated list of awesome Bioinformatics software, tools and resources.
 ## 1、质量控制Quality Control
 
 - FastQC（http://www.bioinformatics.babraham.ac.uk/projects/fastqc/）
+- Peptide QC（https://github.com/PeptidoMexico/peptidomexico-open-science） - Sequence composition, elemental formula, mass, charge, pI and hydropathy.
   备注：FastQC用法：http://www.plob.org/2013/07/16/5987.html
 - Fastx-toolkit（http://hannonlab.cshl.edu/fastx_toolkit/）
 - PrinSeq（http://prinseq.sourceforge.net/）
