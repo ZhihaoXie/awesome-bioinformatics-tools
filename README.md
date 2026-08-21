@@ -16,7 +16,6 @@ A curated list of awesome Bioinformatics software, tools and resources.
 
 - FastQC（http://www.bioinformatics.babraham.ac.uk/projects/fastqc/）
 - Peptide QC（https://github.com/PeptidoMexico/peptidomexico-open-science） - Sequence composition, elemental formula, mass, charge, pI and hydropathy.
-  备注：FastQC用法：http://www.plob.org/2013/07/16/5987.html
 - Fastx-toolkit（http://hannonlab.cshl.edu/fastx_toolkit/）
 - PrinSeq（http://prinseq.sourceforge.net/）
 - <s>FastUniq（https://sourceforge.net/projects/fastuniq/）：将多个fastq合并为2个文件，同时去掉重复序列（duplicates）。（注意，fastuniq 不能读取 fastq gzip 压缩文件，需解压。）</s>
