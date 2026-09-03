@@ -828,6 +828,7 @@ Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php 
   https://software.broadinstitute.org/gatk/blog?id=23205
   ftp://ftp.broadinstitute.org/bundle/pathseq/
 - SeqBench：https://seqbench.com/  A browser-based toolbox for everyday DNA, RNA, and protein sequence tasks.
+- COSMolKit：https://github.com/cosmol-studio/COSMolKit  Molecular graph, SMILES, SDF, InChI, SMARTS, fingerprint, descriptor, conformer, force-field, and structure utilities. Documentation: https://kit.cosmol.org/  Web tools: https://tools.cosmol.org/  PyPI: https://pypi.org/project/cosmolkit/  crates.io: https://crates.io/crates/cosmolkit
 
 ## 48、基因结构分析
 - GSDS：http://gsds.cbi.pku.edu.cn/
