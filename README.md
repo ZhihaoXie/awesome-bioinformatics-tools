@@ -829,7 +829,7 @@ Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php 
   ftp://ftp.broadinstitute.org/bundle/pathseq/
 - SeqBench：https://seqbench.com/  A browser-based toolbox for everyday DNA, RNA, and protein sequence tasks.
 - COSMolKit：https://github.com/cosmol-studio/COSMolKit  Molecular graph, SMILES, SDF, InChI, SMARTS, fingerprint, descriptor, conformer, force-field, and structure utilities. Documentation: https://kit.cosmol.org/  Web tools: https://tools.cosmol.org/  PyPI: https://pypi.org/project/cosmolkit/  crates.io: https://crates.io/crates/cosmolkit
-- spatial-continuum-translational：https://github.com/Lukecele/spatial-continuum-translational  Reproducible Python and CLI research extensions for an explicit, uncalibrated GIST phenotype profile, with validated TSV/CSV/JSON inputs and deterministic component outputs. Research-only; not a clinical predictor. DOI: https://doi.org/10.21203/rs.3.rs-11633521/v1  Research hub: https://lukecele-research.vercel.app/
+- spatial-continuum-translational：https://github.com/Lukecele/spatial-continuum-translational  Reproducible Python and CLI research extensions for an explicit, uncalibrated GIST phenotype profile, with validated TSV/CSV/JSON inputs and deterministic component outputs. Research-only; not a clinical predictor. DOI: https://doi.org/10.21203/rs.3.rs-11633521/v1  Research hub: https://lucacelebrano.me/
 
 ## 48、基因结构分析
 - GSDS：http://gsds.cbi.pku.edu.cn/
