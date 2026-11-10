@@ -1,792 +1,720 @@
 # awesome-bioinformatics-tools
+
 A curated list of awesome Bioinformatics software, tools and resources.
-
-一些高校、研究所也有整理软件工具列表，如：
-
-+ https://wiki.gacrc.uga.edu/wiki/Main_Page
-+ https://wiki.rc.ufl.edu/doc/Category:Software
-+ http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/index.html
-
-一些论坛也有类似的讨论帖，如 http://seqanswers.com/wiki/Software
-
-我个人推荐一个网站，上面有很多的工具说明：https://omictools.com/
-
 
 ## 1、质量控制Quality Control
 
-- FastQC（http://www.bioinformatics.babraham.ac.uk/projects/fastqc/）
-- Peptide QC（https://github.com/PeptidoMexico/peptidomexico-open-science） - Sequence composition, elemental formula, mass, charge, pI and hydropathy.
-- Fastx-toolkit（http://hannonlab.cshl.edu/fastx_toolkit/）
-- PrinSeq（http://prinseq.sourceforge.net/）
-- <s>FastUniq（https://sourceforge.net/projects/fastuniq/）：将多个fastq合并为2个文件，同时去掉重复序列（duplicates）。（注意，fastuniq 不能读取 fastq gzip 压缩文件，需解压。）</s>
-  其他去除duplicates（不基于参考基因组比对）的工具有：fastx_collapser in the FASTX-Toolkit（single-end） and Fulcrum、CD-HIT-DUP、GPU-DupRemoval
-  去除duplicates，可参考文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5123249/
-- QUASR：https://sourceforge.net/projects/quasr/：QUASR is a lightweight pipeline written to process and analyse next-generation sequencing (NGS) data from Illumina, 454, and Ion Torrent platforms.
-- RSeQC：RSeQC包,它提供了一系列有用的小工具能够评估高通量测序尤其是RNA-seq数据.比如一些基本模块;检查序列质量,核酸组分偏性,PCR偏性,GC含量偏性,还有RNA-seq特异性模块:评估测序饱和度，映射读数分布，覆盖均匀性，链特异性，转录水平RNA完整性等。https://www.jianshu.com/p/edb9a5c3ecb0
-
+- FastQC：[FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- Peptide QC：[Peptide QC](https://github.com/PeptidoMexico/peptidomexico-open-science) - Sequence composition, elemental formula, mass, charge, pI and hydropathy.
+- Fastx-toolkit：[Fastx-toolkit](http://hannonlab.cshl.edu/fastx_toolkit/)
+- PrinSeq：[PrinSeq](http://prinseq.sourceforge.net/)
+- <s>FastUniq：[FastUniq](https://sourceforge.net/projects/fastuniq/) - 将多个fastq合并为2个文件，同时去掉重复序列（duplicates）。（注意，fastuniq 不能读取 fastq gzip 压缩文件，需解压。）</s>
+  其他去除duplicates（不基于参考基因组比对）的工具有：fastx_collapser in the FASTX-Toolkit（single-end）、Fulcrum、CD-HIT-DUP、GPU-DupRemoval
+  去除duplicates，可参考[文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5123249/)
+- QUASR：[QUASR](https://sourceforge.net/projects/quasr/) - QUASR is a lightweight pipeline written to process and analyse next-generation sequencing (NGS) data from Illumina, 454, and Ion Torrent platforms.
+- RSeQC：[RSeQC](https://www.jianshu.com/p/edb9a5c3ecb0) - RSeQC包，它提供了一系列有用的小工具能够评估高通量测序尤其是RNA-seq数据。比如一些基本模块;检查序列质量,核酸组分偏性,PCR偏性,GC含量偏性,还有RNA-seq特异性模块:评估测序饱和度，映射读数分布，覆盖均匀性，链特异性，转录水平RNA完整性等。
 
 ## 2、reads剪切过滤（trim处理）
 
-- Vectors，Adapters, linkers, and PCR primers检索：https://www.ncbi.nlm.nih.gov/tools/vecscreen/
-- Cutadapt: https://github.com/marcelm/cutadapt  或者 http://cutadapt.readthedocs.io/en/stable/index.html  切除adapter序列
-- Trimmomatic（http://www.usadellab.org/cms/?page=trimmomatic）
-- sickle(https://github.com/najoshi/sickle/)
-- NGSQC toolkit（http://www.nipgr.res.in/ngsqctoolkit.html）
-  备注：NGSQC toolkit的用法：http://blog.csdn.net/shmilyringpull/article/details/9225195
-- SolexaQA（http://solexaqa.sourceforge.net/ 或者 https://sourceforge.net/projects/solexaqa/files/src/）
-- Trim Galore：http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/  或者 https://github.com/FelixKrueger/TrimGalore
-- Platanus_trim：http://platanus.bio.titech.ac.jp/?page_id=30 （不支持gzip格式的fastq文件）
-- Seqtk: https://github.com/lh3/seqtk
-- Seqprep（https://github.com/jstjohn/SeqPrep）
-- TagCleaner（https://sourceforge.net/projects/tagcleaner/files/）：remove tag sequences (e.g. WTA or MID tags) from metagenomic datasets. 
-- BioPieces: http://code.google.com/p/biopieces/
-- fastp：https://github.com/OpenGene/fastp
-- SOAPnuke：https://github.com/BGI-flexlab/SOAPnuke
-- seq_crumbs（https://bioinf.comav.upv.es/seq_crumbs/）（python2程序，不推荐！）
-- seqcln（https://sourceforge.net/projects/seqclean/）（针对fasta format，不推荐！）
-  质控工具间的比较：https://zhuanlan.zhihu.com/p/28924793
+- vecscreen：[vecscreen](https://www.ncbi.nlm.nih.gov/tools/vecscreen/) - Vectors，Adapters, linkers, and PCR primers检索
+- Cutadapt：[Cutadapt](https://github.com/marcelm/cutadapt) - [备用地址](http://cutadapt.readthedocs.io/en/stable/index.html) 切除adapter序列
+- Trimmomatic：[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+- sickle：[sickle](https://github.com/najoshi/sickle/)
+- NGSQC toolkit：[NGSQC toolkit](http://www.nipgr.res.in/ngsqctoolkit.html)
+  备注：NGSQC toolkit的[用法](http://blog.csdn.net/shmilyringpull/article/details/9225195)
+- SolexaQA：[SolexaQA](http://solexaqa.sourceforge.net/) - [备用地址](https://sourceforge.net/projects/solexaqa/files/src/)
+- Trim Galore：[Trim Galore](http://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) - [备用地址](https://github.com/FelixKrueger/TrimGalore)
+- Platanus_trim：[Platanus_trim](http://platanus.bio.titech.ac.jp/?page_id=30) - 备注，不支持gzip格式的fastq文件
+- Seqtk：[Seqtk](https://github.com/lh3/seqtk)
+- Seqprep：[Seqprep](https://github.com/jstjohn/SeqPrep)
+- TagCleaner：[TagCleaner](https://sourceforge.net/projects/tagcleaner/files/) - remove tag sequences (e.g. WTA or MID tags) from metagenomic datasets.
+- BioPieces：[BioPieces](http://code.google.com/p/biopieces/)
+- fastp：[fastp](https://github.com/OpenGene/fastp)
+- SOAPnuke：[SOAPnuke](https://github.com/BGI-flexlab/SOAPnuke)
+- seq_crumbs：[seq_crumbs](https://bioinf.comav.upv.es/seq_crumbs/) - python2程序，不推荐！
+- seqcln：[seqcln](https://sourceforge.net/projects/seqclean/) - 针对fasta format，不推荐！
+  质控工具间的比较：[工具](https://zhuanlan.zhihu.com/p/28924793)
 
-  二代测序---质量控制篇，参考：http://www.cnblogs.com/ZHshuang463508120/p/3606871.html
+  二代测序---质量控制篇，参考：[参考](http://www.cnblogs.com/ZHshuang463508120/p/3606871.html)
 
-  
 ## 3、Reads error correction
 
-Reads error correction相关工具有：SOAPec、ErrorCorrection，这2个都是华大开发的，在 http://soap.genomics.org.cn/soapdenovo.html 均可下载.
+Reads error correction相关工具有：SOAPec、ErrorCorrection，这2个都是华大开发的，在 [链接](http://soap.genomics.org.cn/soapdenovo.html) 均可下载.
 
-- SOAPec_v2.01.tar.gz, a correction tool for SOAPdenovo:
-  http://sourceforge.net/projects/soapdenovo2/files/ErrorCorrection/SOAPec_v2.01.tar.gz/download 
-- ErrorCorrection.tgz, another correction tool for SOAPdenovo:
-  http://sourceforge.net/projects/soapdenovo2/files/ErrorCorrection/ErrorCorrection.tgz/download
+- SOAPec_v2.01.tar.gz：[SOAPec_v2.01.tar.gz](http://sourceforge.net/projects/soapdenovo2/files/ErrorCorrection/SOAPec_v2.01.tar.gz/download) - a correction tool for SOAPdenovo
+- ErrorCorrection.tgz：[ErrorCorrection.tgz](http://sourceforge.net/projects/soapdenovo2/files/ErrorCorrection/ErrorCorrection.tgz/download) - another correction tool for SOAPdenovo
 
-- Correction tool http://soap.genomics.org.cn/down/correction.tar.gz
-- SOAPdenovo http://soap.genomics.org.cn/down/SOAPdenovo-v1.04.tgz
-- GapCloser http://soap.genomics.org.cn/down/GapCloser.tar.gz
+- Correction tool：[Correction tool](http://soap.genomics.org.cn/down/correction.tar.gz)
+- SOAPdenovo：[SOAPdenovo](http://soap.genomics.org.cn/down/SOAPdenovo-v1.04.tgz)
+- GapCloser：[GapCloser](http://soap.genomics.org.cn/down/GapCloser.tar.gz)
 
-更多Reads correction工具见：https://omictools.com/error-correction-category
+更多Reads correction工具见：[工具](https://omictools.com/error-correction-category)
 
 Reads correction工具：Recommended programs:
-– HiSeq data: BLESS, Musket, RACER and SGA.
-– MiSeq data: RACER.
-– Human data: Musket, RACER and SGA."
-https://sourceforge.net/projects/musket/
+
+- HiSeq data - BLESS, Musket, RACER and SGA.
+- MiSeq data - RACER.
+- Human data - Musket, RACER and SGA.
+- Musket：[Musket](https://sourceforge.net/projects/musket/) - short read error corrector for Illumina short read data.
 
 其他类似工具：
-- ECHO （http://uc-echo.sourceforge.net/） 文献 http://genome.cshlp.org/content/21/7/1181.full
-- CORAL （https://www.cs.helsinki.fi/u/lmsalmel/coral/） 文献https://academic.oup.com/bioinformatics/article/27/11/1455/217071/Correcting-errors-in-short-reads-by-multiple
-- Quake（http://www.cbcb.umd.edu/software/quake/index.html），文献http://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-11-r116
-- Quake如何安装：https://www.plob.org/article/1635.html
-- EC: an efficient error correction algorithm for short reads
-- QuorUM: An Error Corrector for Illumina Reads.
+
+- ECHO：[ECHO](http://uc-echo.sourceforge.net/) - [文献](http://genome.cshlp.org/content/21/7/1181.full)
+- CORAL：[CORAL](https://www.cs.helsinki.fi/u/lmsalmel/coral/) - [文献](https://academic.oup.com/bioinformatics/article/27/11/1455/217071/Correcting-errors-in-short-reads-by-multiple)
+- Quake：[Quake](http://www.cbcb.umd.edu/software/quake/index.html) - [文献](http://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-11-r116)
+  - Quake如何安装：[Quake如何安装](https://www.plob.org/article/1635.html)
+- EC - an efficient error correction algorithm for short reads.
+- QuorUM - An Error Corrector for Illumina Reads.
+- Sprai：[Sprai](http://zombie.cb.k.u-tokyo.ac.jp/sprai/) - Sprai (single-pass read accuracy improver) is a tool to correct sequencing errors in single-pass reads for de novo assembly. It is originally designed for correcting sequencing errors in single-molecule DNA sequencing reads, especially in Continuous Long Reads (CLRs) generated by PacBio RS sequencers.
+- BLESS： [BLESS](https://sourceforge.net/projects/bless-ec/)
   For human data, the best tools are lighter and the latest bless. The old bless evaluated in the paper wasn't very good.
-  文献：https://academic.oup.com/bib/article/16/4/588/347932/Correcting-Illumina-data
- （Reads error correction一般在trim之后进行。）
-
-- Sprai（http://zombie.cb.k.u-tokyo.ac.jp/sprai/）Sprai (single-pass read accuracy improver) is a tool to correct sequencing errors in single-pass reads for de novo assembly. It is originally designed for correcting sequencing errors in single-molecule DNA sequencing reads, especially in Continuous Long Reads (CLRs) generated by PacBio RS sequencers.
-
+  [文献](https://academic.oup.com/bib/article/16/4/588/347932/Correcting-Illumina-data)
+  Reads error correction一般在trim之后进行。
 
 ## 4、基因组拼接（Assembly）
 
 K-mer估计：
-- velvetK（http://www.vicbioinformatics.com/software.velvetk.shtml）：用于计算最合适的Kmer
-- KmerGenie（http://kmergenie.bx.psu.edu/）：estimates the best k-mer length for genome de novo assembly.
 
+- velvetK：[velvetK](http://www.vicbioinformatics.com/software.velvetk.shtml) - 用于计算最合适的Kmer
+- KmerGenie：[KmerGenie](http://kmergenie.bx.psu.edu/) - estimates the best k-mer length for genome de novo assembly.
 
 De novo拼接：
-- velvet（http://www.ebi.ac.uk/~zerbino/velvet/）：适用于微生物基因组
-- VelvetOptimiser（http://www.vicbioinformatics.com/software.velvetoptimiser.shtml）：批量多Kmer拼接
-- SPAdes（http://bioinf.spbau.ru/spades）：Illumina、PacBio数据适用 （支持gzip压缩的fastq文件），同样适用于宏基因组。但实际情况，不太适用于病毒。
-- Shovill（https://github.com/tseemann/shovill）：Faster SPAdes assembly of Illumina reads。
-- Minia（https://github.com/GATB/minia）
-- Soapdenovo（http://soap.genomics.org.cn/soapdenovo.html 或者 https://github.com/aquaskyline/SOAPdenovo2）：华大开发的针对大基因组拼接
-- ABySS（http://www.bcgsc.ca/platform/bioinfo/software/abyss）：基于De Bruijn Graph算法，适用于大基因组。
-- ALLPATHS-LG（http://software.broadinstitute.org/allpaths-lg/blog/）：适合于组装short reads数据
-  ALLPATHS-LG的使用说明博客：http://blog.sciencenet.cn/blog-303373-717174.html
-- <s> Celera Assembler（目前不再维护）（http://wgs-assembler.sourceforge.net/wiki/index.php?title=Main_Page），（https://sourceforge.net/projects/wgs-assembler/）：Illumina、454、Pacbio等数据均适用。 </s>
-- CABOG（http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Main_Page）：CABOG(Celera Assembler with Best Overlap Graph) is an extension of the Celera Assembler software。（不再维护）
-- Canu（http://canu.readthedocs.io/en/stable/#）：PacBio RSII or Oxford Nanopore MinION数据适用  http://canu.readthedocs.io/en/latest/
-- Platanus（http://platanus.bio.titech.ac.jp/?p=1）：专门为高杂合基因组组装设计的软件，同样适用于DNA Virus。
-- MetaPlatanus（http://platanus.bio.titech.ac.jp/?page_id=174）：De novo assembly and sequence clustering of metagenomic data（宏基因组拼接）
-- RepARK（https://github.com/PhKoch/RepARK）：de novo creation of repeat consensuses from whole-genome NGS reads
-- RepARK的文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4027187/
-- Novoalign（http://www.novocraft.com/products/novoalign/）：mapping of short reads onto a reference genome
-- Falcon（https://github.com/PacificBiosciences/FALCON）：基于String Graph算法，常用于PacBio diploid assembler。
-- GAGE（http://gage.cbcb.umd.edu/index.html）
-- Arachne & AllPath（https://www.broadinstitute.org/scientific-community/software）
-- VISTA tools，包括AVID: （http://pipeline.lbl.gov/run5details.shtml）
-- MIRA（https://sourceforge.net/p/mira-assembler/wiki/Home/）：a whole genome shotgun and EST sequence assembler for Sanger, 454, Solexa (Illumina), IonTorrent data and PacBio。
-- gsAssembler/GS De Novo Assembler/runAssembly (command-line based) and gsMapper (command-line based)（http://www.454.com/products/analysis-software/）：针对454数据的拼接
-- Newbler：是gsAssembler/GS De Novo Assembler的核心算法，已整合在GS De Novo Assembler
-- MetaVelvet（http://metavelvet.dna.bio.keio.ac.jp/）：a short read assember for metagenomics
-- MaSuRCA（ftp://ftp.genome.umd.edu/pub/MaSuRCA/）
-  怎么使用MaSuRCA拼接：https://www.plob.org/article/7853.html
-- RAMPART（https://github.com/TGAC/RAMPART 或 http://www.earlham.ac.uk/rampart/）：a pipeline for de novo assembly of DNA sequence data. 
-- edena(http://www.genomic.ch/edena.php)
-- cap3(http://seq.cs.iastate.edu/cap3.html)
-- SHORTY（http://www3.cs.stonybrook.edu/~skiena/shorty/）：SHORTY用于组装ABI SOLiD产生的序列。目前也可用于Illumina数据，但须先转为fasta格式。
-- Links：http://www.bcgsc.ca/platform/bioinfo/software/links
-- SGA：https://github.com/jts/sga
 
-- iCORN2(http://icorn.sourceforge.net/)：correct PacBio assemblies of Bacteria and Eukaryotes. 
-- FaBox：http://users-birc.au.dk/biopv/php/fabox/：an online fasta sequence toolbox，可转换格式、提取序列
-
+- velvet：[velvet](http://www.ebi.ac.uk/~zerbino/velvet/) - 适用于微生物基因组
+- VelvetOptimiser：[VelvetOptimiser](http://www.vicbioinformatics.com/software.velvetoptimiser.shtml) - 批量多Kmer拼接
+- SPAdes：[SPAdes](http://bioinf.spbau.ru/spades) - Illumina、PacBio数据适用 （支持gzip压缩的fastq文件），同样适用于宏基因组。但实际情况，不太适用于病毒。
+- Shovill：[Shovill](https://github.com/tseemann/shovill) - Faster SPAdes assembly of Illumina reads。
+- Minia：[Minia](https://github.com/GATB/minia)
+- Soapdenovo：[Soapdenovo](http://soap.genomics.org.cn/soapdenovo.html) - [备用地址](https://github.com/aquaskyline/SOAPdenovo2)：华大开发的针对大基因组拼接
+- ABySS：[ABySS](http://www.bcgsc.ca/platform/bioinfo/software/abyss) - 基于De Bruijn Graph算法，适用于大基因组。
+- ALLPATHS-LG：[ALLPATHS-LG](http://software.broadinstitute.org/allpaths-lg/blog/) - 适合于组装short reads数据
+  ALLPATHS-LG的使用说明博客：[说明](http://blog.sciencenet.cn/blog-303373-717174.html)
+- <s>Celera Assembler：[Celera Assembler](http://wgs-assembler.sourceforge.net/wiki/index.php?title=Main_Page) - （目前不再维护），[链接](https://sourceforge.net/projects/wgs-assembler/)：Illumina、454、Pacbio等数据均适用。</s>
+- CABOG：[CABOG](http://sourceforge.net/apps/mediawiki/wgs-assembler/index.php?title=Main_Page) - CABOG(Celera Assembler with Best Overlap Graph) is an extension of the Celera Assembler software。（不再维护）
+- Canu：[Canu](http://canu.readthedocs.io/en/stable/#) - PacBio RSII or Oxford Nanopore MinION数据适用 [说明文档](http://canu.readthedocs.io/en/latest/)
+- Platanus：[Platanus](http://platanus.bio.titech.ac.jp/?p=1) - 专门为高杂合基因组组装设计的软件，同样适用于DNA Virus。
+- MetaPlatanus：[MetaPlatanus](http://platanus.bio.titech.ac.jp/?page_id=174) - De novo assembly and sequence clustering of metagenomic data（宏基因组拼接）
+- RepARK：[RepARK](https://github.com/PhKoch/RepARK) - de novo creation of repeat consensuses from whole-genome NGS reads
+  - RepARK的文献：[RepARK的文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4027187/)
+- Novoalign：[Novoalign](http://www.novocraft.com/products/novoalign/) - mapping of short reads onto a reference genome
+- Falcon：[Falcon](https://github.com/PacificBiosciences/FALCON) - 基于String Graph算法，常用于PacBio diploid assembler。
+- GAGE：[GAGE](http://gage.cbcb.umd.edu/index.html)
+- Arachne & AllPath：[Arachne & AllPath](https://www.broadinstitute.org/scientific-community/software)
+- VISTA tools，包括AVID：[VISTA tools](http://pipeline.lbl.gov/run5details.shtml)
+- MIRA：[MIRA](https://sourceforge.net/p/mira-assembler/wiki/Home/) - a whole genome shotgun and EST sequence assembler for Sanger, 454, Solexa (Illumina), IonTorrent data and PacBio。
+- gsAssembler/GS De Novo Assembler/runAssembly (command-line based) and gsMapper (command-line based)：[gsAssembler/GS De Novo Assembler/runAssembly (command-line based) and gsMapper (command-line based)](http://www.454.com/products/analysis-software/) - 针对454数据的拼接
+- Newbler - 是gsAssembler/GS De Novo Assembler的核心算法，已整合在GS De Novo Assembler
+- MetaVelvet：[MetaVelvet](http://metavelvet.dna.bio.keio.ac.jp/) - a short read assember for metagenomics
+- MaSuRCA：[MaSuRCA](ftp://ftp.genome.umd.edu/pub/MaSuRCA/)
+  怎么使用MaSuRCA拼接：[使用](https://www.plob.org/article/7853.html)
+- RAMPART：[RAMPART](https://github.com/TGAC/RAMPART) - [备用地址](http://www.earlham.ac.uk/rampart/)：a pipeline for de novo assembly of DNA sequence data.
+- edena：[edena](http://www.genomic.ch/edena.php)
+- cap3：[cap3](http://seq.cs.iastate.edu/cap3.html)
+- SHORTY：[SHORTY](http://www3.cs.stonybrook.edu/~skiena/shorty/) - SHORTY用于组装ABI SOLiD产生的序列。目前也可用于Illumina数据，但须先转为fasta格式。
+- Links：[Links](http://www.bcgsc.ca/platform/bioinfo/software/links)
+- SGA：[SGA](https://github.com/jts/sga)
+- iCORN2：[iCORN2](http://icorn.sourceforge.net/) - correct PacBio assemblies of Bacteria and Eukaryotes.
+- FaBox：[FaBox](http://users-birc.au.dk/biopv/php/fabox/) - an online fasta sequence toolbox，可转换格式、提取序列
 
 结合reference genome指导拼接：
-- IDBA（http://i.cs.hku.hk/~alse/hkubrg/projects/idba_hybrid/index.html）
-- Chromosomer（https://github.com/gtamazian/Chromosomer）
-  Chromosomer文献：https://link.springer.com/article/10.1186/s13742-016-0141-6
-- Scaffold_Builder（https://sourceforge.net/projects/scaffold-b/）：Combining de novo and reference-guided assembly with Scaffold_builder
-  文献：http://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-23
-- AlignGraph（https://github.com/baoe/AlignGraph）
-- Ragout（https://github.com/fenderglass/Ragout）
-- SyMap（http://www.agcol.arizona.edu/software/symap/）：a turnkey synteny system with application to plant genomes，eukaryotic genomes 均适用。
-- RACA（）
-- AMOScmp（https://sourceforge.net/projects/amos/?source=directory）
-- Medusa（https://github.com/combogenomics/medusa）
-- CONTIGuator（http://contiguator.sourceforge.net/）
-- Multi-CAR（http://140.114.85.168/Multi-CAR/index.php）
-- refGuidedDeNovoAssembly_pipelines：https://bitbucket.org/HeidiLischer/refguideddenovoassembly_pipelines
-  参考文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5681816/
+
+- IDBA：[IDBA](http://i.cs.hku.hk/~alse/hkubrg/projects/idba_hybrid/index.html)
+- Chromosomer：[Chromosomer](https://github.com/gtamazian/Chromosomer)
+  Chromosomer[文献](https://link.springer.com/article/10.1186/s13742-016-0141-6)
+- Scaffold_Builder：[Scaffold_Builder](https://sourceforge.net/projects/scaffold-b/) - Combining de novo and reference-guided assembly with Scaffold_builder
+  [文献](http://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-23)
+- AlignGraph：[AlignGraph](https://github.com/baoe/AlignGraph)
+- Ragout：[Ragout](https://github.com/fenderglass/Ragout)
+- SyMap：[SyMap](http://www.agcol.arizona.edu/software/symap/) - a turnkey synteny system with application to plant genomes，eukaryotic genomes 均适用。
+- RACA
+- AMOScmp：[AMOScmp](https://sourceforge.net/projects/amos/?source=directory)
+- Medusa：[Medusa](https://github.com/combogenomics/medusa)
+- CONTIGuator：[CONTIGuator](http://contiguator.sourceforge.net/)
+- Multi-CAR：[Multi-CAR](http://140.114.85.168/Multi-CAR/index.php)
+- refGuidedDeNovoAssembly_pipelines：[refGuidedDeNovoAssembly_pipelines](https://bitbucket.org/HeidiLischer/refguideddenovoassembly_pipelines)
+  参考[文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5681816/)
   \# refGuidedDeNovoAssembly_pipelines 更适合大型基因组（真核），需要多个文库、mate文库（大片段文库）。
 
-  
-
 Ordering contigs against a reference:
-- Mauve（http://darlinglab.org/mauve/mauve.html）  From the Tools menu, select ‘Move Contigs’.
-- ABACAS（http://abacas.sourceforge.net/index.html）
-  示例：
+
+- Mauve：[Mauve](http://darlinglab.org/mauve/mauve.html) - From the Tools menu, select ‘Move Contigs’.
+- ABACAS：[ABACAS](http://abacas.sourceforge.net/index.html)
+  示例
+  ```
   perl abacas.1.3.1.pl -r ../../ref_data/NC_022082.fasta -q ../genomes/NJXKYY22.genome.fasta -p "nucmer" -i 70 -c -m -b -o test_sorted.fasta
-  更多使用说明：http://abacas.sourceforge.net/Manual.html
+  ```
+  更多使用[说明](http://abacas.sourceforge.net/Manual.html)
 
-- GAP5（http://www.sanger.ac.uk/science/tools/gap5 或者https://sourceforge.net/projects/staden/）：Gap5 is a DNA sequence assembly visualiser and editing tool. 
-  GAP5使用说明：file:///C:/myProgram/Staden%20Package/share/doc/staden/manual/gap5_toc.html
-
-
+- GAP5：[GAP5](http://www.sanger.ac.uk/science/tools/gap5) - [备用地址](https://sourceforge.net/projects/staden/)：Gap5 is a DNA sequence assembly visualiser and editing tool.
 
 病毒组装(virus assembly):
 
-- VirAmp（http://docs.viramp.com/en/latest/index.html）：a galaxy-based viral genome assembly pipeline
-  https://github.com/kdaily/viramp-project
-  http://viramp.readthedocs.io/en/latest/
-  VirAmp的文献：https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0060-y
-- V-Fat（https://www.broadinstitute.org/viral-genomics/v-fat）：V-FAT is a tool to perform automated computational finishing and annotation of de novo viral assemblies. automated finishing, annotation, and QA tool for viral assemblies.
-- Viral-ngs（http://viral-ngs.readthedocs.io/en/latest/index.html）：针对 rna 病毒
-- IVA（https://github.com/sanger-pathogens/iva）：IVA is a de novo assembler designed to assemble virus genomes that have no repeat sequences, using Illumina read pairs sequenced from mixed populations at extremely high and variable depth.
-- VIGA（https://github.com/EGTortuero/viga）：VIGA a sensitive precise and automatic de novo viral genome annotator。
-
+- VirAmp：[VirAmp](http://docs.viramp.com/en/latest/index.html) - a galaxy-based viral genome assembly pipeline.
+  [链接](https://github.com/kdaily/viramp-project)
+  [链接](http://viramp.readthedocs.io/en/latest/)
+  VirAmp的[文献](https://gigascience.biomedcentral.com/articles/10.1186/s13742-015-0060-y)
+- V-Fat：[V-Fat](https://www.broadinstitute.org/viral-genomics/v-fat) - V-FAT is a tool to perform automated computational finishing and annotation of de novo viral assemblies. automated finishing, annotation, and QA tool for viral assemblies.
+- Viral-ngs：[Viral-ngs](http://viral-ngs.readthedocs.io/en/latest/index.html) - 针对 RNA 病毒。
+- IVA：[IVA](https://github.com/sanger-pathogens/iva) - IVA is a de novo assembler designed to assemble virus genomes that have no repeat sequences, using Illumina read pairs sequenced from mixed populations at extremely high and variable depth.
+- VIGA：[VIGA](https://github.com/EGTortuero/viga) - VIGA a sensitive precise and automatic de novo viral genome annotator。
 
 其他与病毒相关的工具：
 （1）Virus integration detection
-- BSVF（https://github.com/BioInfoTools/BSVF）：Bisulfite Sequencing Virus integration Finder
-- VirusFinder （https://bioinfo.uth.edu/VirusFinder/）
-- VirusSeq（http://odin.mdacc.tmc.edu/%7Exsu1/VirusSeq.html）：detecting known viruses and their integration sites in the human genome using next-generation sequencing data. 
-- ViralFusionSeq (VFS)（https://sourceforge.net/projects/viralfusionseq/）：discovering viral integration events and reconstruct fusion transcripts at single-base resolution.
-- Vy-PER （http://www.ikmb.uni-kiel.de/vy-per/ ）：Virus integration detection bY Paired End Reads
-- seeksv（https://github.com/qiukunlong/seeksv）：an accurate tool for structural variation and virus integration detection.
-（2）宏基因组数据相关的病毒
-- VirMet（https://github.com/ozagordi/VirMet）：a set of tools for viral metagenomics
-- VirFinder（https://github.com/jessieren/VirFinder）：R package for identifying viral sequences from metagenomic data using sequence signatures。
-- METAVIR：http://metavir-meb.univ-bpclermont.fr/  METAVIR is a web server designed to annotate viral metagenomic sequences (raw reads or assembled contigs).
-- haploclique（https://github.com/armintoepfer/haploclique）：病毒snp、indel检测
 
-- Kronos（http://kronos.readthedocs.io/en/latest/）：A workflow assembler for cancer genome analytics and informatics.
+- BSVF：[BSVF](https://github.com/BioInfoTools/BSVF) - Bisulfite Sequencing Virus integration Finder
+- VirusFinder：[VirusFinder](https://bioinfo.uth.edu/VirusFinder/)
+- VirusSeq：[VirusSeq](http://odin.mdacc.tmc.edu/%7Exsu1/VirusSeq.html) - detecting known viruses and their integration sites in the human genome using next-generation sequencing data.
+- ViralFusionSeq (VFS)：[ViralFusionSeq (VFS)](https://sourceforge.net/projects/viralfusionseq/) - discovering viral integration events and reconstruct fusion transcripts at single-base resolution.
+- Vy-PER：[Vy-PER](http://www.ikmb.uni-kiel.de/vy-per/) - Virus integration detection bY Paired End Reads
+- seeksv：[seeksv](https://github.com/qiukunlong/seeksv) - an accurate tool for structural variation and virus integration detection.
 
+（2）宏基因组数据相关的工具
 
-更多的组装工具见：http://www.mybiosoftware.com/assembly-tools
+- VirMet：[VirMet](https://github.com/ozagordi/VirMet) - a set of tools for viral metagenomics
+- VirFinder：[VirFinder](https://github.com/jessieren/VirFinder) - R package for identifying viral sequences from metagenomic data using sequence signatures。
+- METAVIR：[METAVIR](http://metavir-meb.univ-bpclermont.fr/) - METAVIR is a web server designed to annotate viral metagenomic sequences (raw reads or assembled contigs).
+- haploclique：[haploclique](https://github.com/armintoepfer/haploclique) - 病毒snp、indel检测
 
+- Kronos：[Kronos](http://kronos.readthedocs.io/en/latest/) - A workflow assembler for cancer genome analytics and informatics.
+
+更多的组装工具见：[工具](http://www.mybiosoftware.com/assembly-tools)
 
 组装出来的基因组草图的scaffold需要进一步进行gaps的关闭。进行这样功能的软件有：
-- SOAPdenovo GapCloser (http://sourceforge.net/projects/soapdenovo2/files/GapCloser/)
-- IMAGE（https://sourceforge.net/projects/image2/）：Iterative Mapping and Assembly for Gap Elimination。
-- GapFiller （https://www.baseclear.com/services/bioinformatics/basetools/gapfiller/）
-  GapFiller使用说明博客：https://www.plob.org/article/6182.html
-- 另外一个  GapFiller（https://sourceforge.net/projects/gapfiller/）
-- FinIS（https://sourceforge.net/projects/finis/）
-- FGAP（https://sourceforge.net/projects/fgap/）：利用BLAST将contigs序列比对到基因组草图序列上，寻找重叠到gap区间的最优序列，从而进行补洞。
-  FGAP的文献：https://www.researchgate.net/publication/263207973_FGAP_An_automated_gap_closing_tool  或者 http://bmcresnotes.biomedcentral.com/articles/10.1186/1756-0500-7-371
-  FGAP的使用博客：http://www.chenlianfu.com/?p=2333
-- icorn（http://icorn.sourceforge.net/）：that enables errors in the consensus sequence to be corrected by iteratively mapping reads to the current assembly. （校正序列）
 
-Bandage：https://rrwick.github.io/Bandage/    Assembly Graph Visualisation
+- SOAPdenovo GapCloser：[SOAPdenovo GapCloser](http://sourceforge.net/projects/soapdenovo2/files/GapCloser/) - )
+- IMAGE：[IMAGE](https://sourceforge.net/projects/image2/) - Iterative Mapping and Assembly for Gap Elimination。
+- GapFiller：[GapFiller](https://www.baseclear.com/services/bioinformatics/basetools/gapfiller/)
+  GapFiller使用说明博客：[说明](https://www.plob.org/article/6182.html)
+- 另外一个  GapFiller：[GapFiller](https://sourceforge.net/projects/gapfiller/)
+- FinIS：[FinIS](https://sourceforge.net/projects/finis/)
+- FGAP：[FGAP](https://sourceforge.net/projects/fgap/) - 利用BLAST将contigs序列比对到基因组草图序列上，寻找重叠到gap区间的最优序列，从而进行补洞。
+  FGAP的[文献](https://www.researchgate.net/publication/263207973_FGAP_An_automated_gap_closing_tool) 或者 [文献](http://bmcresnotes.biomedcentral.com/articles/10.1186/1756-0500-7-371)
+  FGAP的使用[博客](http://www.chenlianfu.com/?p=2333)
+- icorn：[icorn](http://icorn.sourceforge.net/) - that enables errors in the consensus sequence to be corrected by iteratively mapping reads to the current assembly.（校正序列）
 
-微生物基因组流程相关软件：https://holtlab.net/2015/02/25/tools-for-bacterial-comparative-genomics/
+- Bandage：[Bandage](https://rrwick.github.io/Bandage/) - Assembly Graph Visualisation
 
-
+微生物基因组流程相关软件：[链接](https://holtlab.net/2015/02/25/tools-for-bacterial-comparative-genomics/)
 
 对基因组错误评估
 
-- REAPR(Recognition of Errors in Assemblies using Paired Reads)能利用成对的reads来识别基因组序列中的错误。从而，能将基因组序列从错误的gap处断开或将错误序列使用 Ns 代替。同时，对错误信息进行统计。
-  REAPR官网：http://www.sanger.ac.uk/science/tools/reapr
+- REAPR：[REAPR](http://www.sanger.ac.uk/science/tools/reapr) - (Recognition of Errors in Assemblies using Paired Reads)能利用成对的reads来识别基因组序列中的错误。从而，能将基因组序列从错误的gap处断开或将错误序列使用 Ns 代替。同时，对错误信息进行统计。
   安装 REAPR 需要先安装 R 和 Perl 模块： File::Basename, File::Copy, File::Spec, File::Spec::Link, Getopt::Long, List::Util。
- REAPR使用的博客：http://www.chenlianfu.com/?p=2329
+  REAPR使用的[博客](http://www.chenlianfu.com/?p=2329)
 
-- QUAST（http://bioinf.spbau.ru/quast 或者 http://quast.sourceforge.net/quast）：基因组装配质量评估工具
-  QUAST说明文档：http://quast.bioinf.spbau.ru/manual.html
-- LASTZ（http://www.bx.psu.edu/~rsharris/lastz/）
-- Miller Lab：http://www.bx.psu.edu/miller_lab/
-- Mauve assembly metrics - （http://code.google.com/p/ngopt/wiki/How_To_Score_Genome_Assemblies_with_Mauve）
-- InGAP-SV - （http://ingap.sourceforge.net/）：InGAP is also useful for finding structural variants between genomes from read mappings.
+- QUAST：[QUAST](http://bioinf.spbau.ru/quast) - [备用地址](http://quast.sourceforge.net/quast)：基因组装配质量评估工具
+  QUAST说明[文档](http://quast.bioinf.spbau.ru/manual.html)
+- LASTZ：[LASTZ](http://www.bx.psu.edu/~rsharris/lastz/)
+- Miller Lab：[Miller Lab](http://www.bx.psu.edu/miller_lab/)
+- Mauve assembly metrics：[Mauve assembly metrics](http://code.google.com/p/ngopt/wiki/How_To_Score_Genome_Assemblies_with_Mauve)
+- InGAP-SV：[InGAP-SV](http://ingap.sourceforge.net/) - InGAP is also useful for finding structural variants between genomes from read mappings.
 
-merge-gbk-records：https://github.com/kblin/merge-gbk-records：Merge multiple GenBank records using a defined spacer sequence
+- merge-gbk-records：[merge-gbk-records](https://github.com/kblin/merge-gbk-records) - Merge multiple GenBank records using a defined spacer sequence
 
+组装流程参考文档：[参考](http://vlsci.github.io/lscc_docs/tutorials/assembly/assembly-protocol/#section-2-assembly)
 
-组装流程参考文档：http://vlsci.github.io/lscc_docs/tutorials/assembly/assembly-protocol/#section-2-assembly
-http://onlinelibrary.wiley.com/doi/10.1111/eva.12178/full
-https://en.wikipedia.org/wiki/Sequence_assembly
-
+- onlinelibrary.wiley.com：[onlinelibrary.wiley.com](http://onlinelibrary.wiley.com/doi/10.1111/eva.12178/full)
+- en.wikipedia.org：[en.wikipedia.org](https://en.wikipedia.org/wiki/Sequence_assembly)
 
 ## 5、EST拼接
-- iAssembler（http://bioinfo.bti.cornell.edu/tool/iAssembler/）：利用MIRA以及CAP3软件，将454以及sanger测序产生的转录组数据(EST)拼接成contigs。
+
+- iAssembler：[iAssembler](http://bioinfo.bti.cornell.edu/tool/iAssembler/) - 利用MIRA以及CAP3软件，将454以及sanger测序产生的转录组数据(EST)拼接成contigs。
   相关文献：Yi Zheng , Liangjun Zhao , Junping Gao and Zhangjun Fei（2011）iAssembler: a package for de novo assembly of Roche-454/Sanger transcriptome sequences.
 
+## 6、Alignment/比对
 
-## 6、Alignment比对
-- BLAST+（ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/）
-- BLAT（http://genome.ucsc.edu/cgi-bin/hgBlat?command=start）
-- clustalx/clustalw（http://www.clustal.org/）
+- BLAST+：[BLAST+](ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/)
+- BLAT：[BLAT](http://genome.ucsc.edu/cgi-bin/hgBlat?command=start)
+- clustalx/clustalw：[clustalx/clustalw](http://www.clustal.org/)
   clustalX是clustaw的图形化版本，前者在windows环境下使用，后者在DOS环境下是使用。
-  clustalw-format：http://web.mit.edu/meme_v4.9.0/doc/clustalw-format.html
-  
-  更多软件：http://www.ebi.ac.uk/Tools/psa/
-  
-- MAFFT（Multiple Alignment using Fast Fourier Transform）（http://mafft.cbrc.jp/alignment/software/）
-- MUSCLE（MUltiple Sequence Comparison by Log- Expectation）（http://www.drive5.com/muscle/）
-- Mauve（http://darlinglab.org/mauve/mauve.html）
-- Kalign（http://msa.sbc.su.se/cgi-bin/msa.cgi）
-- T-Coffee（http://www.tcoffee.org/Projects/tcoffee/index.html）
-- LAGAN & Shuffle-LAGAN（http://lagan.stanford.edu/lagan_web/index.shtml）
-- MUGSY（http://mugsy.sourceforge.net）
-- MUMmer（https://sourceforge.net/projects/mummer/）
-- diamond（https://github.com/bbuchfink/diamond）
-- amos（http://sourceforge.net/projects/amos/files/）：minimus2是amos拼接软件包里面的一个组件，它的功能就是将两组contig进行合并，延伸contig的长度，减少contig的数量。Amos是A Modular, Open-Source whole genome assembler的缩写，致力于打造成一个拼接软件的基础软件系统。minimus2用的是基于nucmer overlap检测的算法，速度上比Smith-Waterman hash-overlap的算法要快。更多说明：http://amos.sourceforge.net/wiki/index.php/AMOS
-- circlator（http://sanger-pathogens.github.io/circlator/）：A tool to circularize genome assemblies
-- ACT（Artemis Comparison Tool）（http://www.sanger.ac.uk/science/tools/artemis-comparison-tool-act）
-- GMAP（http://research-pub.gene.com/gmap/ 或者 https://wiki.gacrc.uga.edu/wiki/Gmap-gsnap-Sapelo）：A Genomic Mapping and Alignment Program for mRNA and EST Sequences
-- MSA（https://www.ncbi.nlm.nih.gov/CBBresearch/Schaffer/msa.html）
-  msa（http://www.bioconductor.org/packages/release/bioc/html/msa.html）：an R package for multiple sequence alignment。
-- MSAProbs（https://sourceforge.net/projects/msaprobs/ 或者 http://msaprobs.sourceforge.net/homepage.htm#latest）
-- PROBCONS（http://probcons.stanford.edu/index.html）
-- Probalign（http://probalign.njit.edu/probalign/login）
-- M-Coffee（http://www.tcoffee.org/Projects/mcoffee/）
-- MergeAlign（http://www.stevekellylab.com/software/mergealign）
+  clustalw-format：[链接](http://web.mit.edu/meme_v4.9.0/doc/clustalw-format.html)
 
-Muscle,ClustalW和T-coffee的简单比较：https://www.plob.org/article/4104.html
-更多比对软件：https://en.wikipedia.org/wiki/List_of_sequence_alignment_software
-http://www.ebi.ac.uk/Tools/msa/
+  更多软件：[链接](http://www.ebi.ac.uk/Tools/psa/)
 
+- MAFFT：[MAFFT](http://mafft.cbrc.jp/alignment/software/) - Multiple Alignment using Fast Fourier Transform
+- MUSCLE：[MUSCLE](http://www.drive5.com/muscle/) - MUltiple Sequence Comparison by Log- Expectation
+- Mauve：[Mauve](http://darlinglab.org/mauve/mauve.html)
+- Kalign：[Kalign](http://msa.sbc.su.se/cgi-bin/msa.cgi)
+- T-Coffee：[T-Coffee](http://www.tcoffee.org/Projects/tcoffee/index.html)
+- LAGAN & Shuffle-LAGAN：[LAGAN & Shuffle-LAGAN](http://lagan.stanford.edu/lagan_web/index.shtml)
+- MUGSY：[MUGSY](http://mugsy.sourceforge.net)
+- MUMmer：[MUMmer](https://sourceforge.net/projects/mummer/)
+- diamond：[diamond](https://github.com/bbuchfink/diamond)
+- amos：[amos](http://sourceforge.net/projects/amos/files/) - minimus2是amos拼接软件包里面的一个组件，它的功能就是将两组contig进行合并，延伸contig的长度，减少contig的数量。Amos是A Modular, Open-Source whole genome assembler的缩写，致力于打造成一个拼接软件的基础软件系统。minimus2用的是基于nucmer overlap检测的算法，速度上比Smith-Waterman hash-overlap的算法要快。更多[说明](http://amos.sourceforge.net/wiki/index.php/AMOS)
+- circlator：[circlator](http://sanger-pathogens.github.io/circlator/) - A tool to circularize genome assemblies
+- ACT：[ACT](http://www.sanger.ac.uk/science/tools/artemis-comparison-tool-act) - Artemis Comparison Tool
+- GMAP：[GMAP](http://research-pub.gene.com/gmap/) - [备用地址](https://wiki.gacrc.uga.edu/wiki/Gmap-gsnap-Sapelo)：A Genomic Mapping and Alignment Program for mRNA and EST Sequences
+- MSA：[MSA](https://www.ncbi.nlm.nih.gov/CBBresearch/Schaffer/msa.html)
+  msa[链接](http://www.bioconductor.org/packages/release/bioc/html/msa.html)：an R package for multiple sequence alignment。
+- MSAProbs：[MSAProbs](https://sourceforge.net/projects/msaprobs/) - [备用地址](http://msaprobs.sourceforge.net/homepage.htm#latest)
+- PROBCONS：[PROBCONS](http://probcons.stanford.edu/index.html)
+- Probalign：[Probalign](http://probalign.njit.edu/probalign/login)
+- M-Coffee：[M-Coffee](http://www.tcoffee.org/Projects/mcoffee/)
+- MergeAlign：[MergeAlign](http://www.stevekellylab.com/software/mergealign)
 
-多序列比对的格式：http://www.cnblogs.com/tsingke/p/3940074.html
-多序列比对 wiki百科：https://en.wikipedia.org/wiki/Multiple_sequence_alignment
-http://www.docin.com/p-812012331.html
+Muscle,ClustalW和T-coffee的简单比较：[比较](https://www.plob.org/article/4104.html)
+更多比对软件：[链接](https://en.wikipedia.org/wiki/List_of_sequence_alignment_software)
 
+- ebi.ac.uk：[ebi.ac.uk](http://www.ebi.ac.uk/Tools/msa/)
+
+- 多序列比对的格式：[多序列比对的格式](http://www.cnblogs.com/tsingke/p/3940074.html)
+- 多序列比对 wiki百科：[多序列比对 wiki百科](https://en.wikipedia.org/wiki/Multiple_sequence_alignment)
+- docin.com：[docin.com](http://www.docin.com/p-812012331.html)
 
 全局比对工具
-GASSST：http://www.irisa.fr/symbiose/projects/gassst/
-示例：
-Gassst -d tmp.fna -i gene_primer_out/Microcystis_aeruginosa.eryG_2.Microcystis_aeruginosa.eryG_2.p3_seqs.fa -o test.gassout -p 80 -m 8 -n 10
 
+- GASSST：[GASSST](http://www.irisa.fr/symbiose/projects/gassst/)
+
+示例：
+
+```bash
+Gassst -d tmp.fna -i gene_primer_out/Microcystis_aeruginosa.eryG_2.Microcystis_aeruginosa.eryG_2.p3_seqs.fa -o test.gassout -p 80 -m 8 -n 10
+```
 
 蛋白多序列比对转为核酸比对：
-pal2nal：http://www.bork.embl.de/pal2nal/
 
+- pal2nal：[pal2nal](http://www.bork.embl.de/pal2nal/)
 
 ## 7、Short Read Aligners（mapped）
-- Bowtie（http://bowtie-bio.sourceforge.net/index.shtml）
-- Bwa（http://bio-bwa.sourceforge.net）
-- MAQ（http://maq.sourceforge.net/）
-- subread（http://subread.sourceforge.net/）
-- BBMap（https://sourceforge.net/projects/bbmap/）：BBMap short read aligner, and other bioinformatic tools. 
-- BBtools（http://jgi.doe.gov/data-and-tools/bbtools/）
-  BBmap的使用：http://seqanswers.com/forums/showthread.php?t=58221 和 http://seqanswers.com/forums/showthread.php?t=44494
-- Stampy（http://www.well.ox.ac.uk/project-stampy）：快速、灵敏
-- Stampy的文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3106326/
-- samblaster：（https://github.com/GregoryFaust/samblaster）a tool to mark duplicates and extract discordant and split reads from sam files.
-- sambamba：（https://github.com/biod/sambamba 或者 http://lomereiter.github.io/sambamba/） Tools for working with SAM/BAM data. （推荐！）
+
+- Bowtie：[Bowtie](http://bowtie-bio.sourceforge.net/index.shtml)
+- Bwa：[Bwa](http://bio-bwa.sourceforge.net)
+- MAQ：[MAQ](http://maq.sourceforge.net/)
+- subread：[subread](http://subread.sourceforge.net/)
+- BBMap：[BBMap](https://sourceforge.net/projects/bbmap/) - BBMap short read aligner, and other bioinformatic tools.
+- BBtools：[BBtools](http://jgi.doe.gov/data-and-tools/bbtools/)
+  BBmap的[使用](http://seqanswers.com/forums/showthread.php?t=58221) 和 [使用](http://seqanswers.com/forums/showthread.php?t=44494)
+- Stampy：[Stampy](http://www.well.ox.ac.uk/project-stampy) - 快速、灵敏
+  - Stampy的文献：[Stampy的文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3106326/)
+- samblaster：[samblaster](https://github.com/GregoryFaust/samblaster) - a tool to mark duplicates and extract discordant and split reads from sam files.
+- sambamba：[sambamba](https://github.com/biod/sambamba) - [备用地址](http://lomereiter.github.io/sambamba/) Tools for working with SAM/BAM data. （推荐！）
+- SMALT：[SMALT](http://www.sanger.ac.uk/science/tools/smalt-0) - ( 或者 [备用地址](https://sourceforge.net/projects/smalt/)) ：SMALT aligns DNA sequencing reads with genomic reference sequences.
+- BEDTools：[BEDTools](https://code.google.com/p/bedtools/)
 - ELAND
 - Novoalign
-- SMALT(http://www.sanger.ac.uk/science/tools/smalt-0 或者 https://sourceforge.net/projects/smalt/) ：SMALT aligns DNA sequencing reads with genomic reference sequences. 
-- BEDTools（https://code.google.com/p/bedtools/）
-
 
 ## 8、SNP/indel calling
-- Dindel（http://sites.google.com/site/keesalbers/soft/dindel）：小的插入/缺失发现
-- Pindel（http://gmt.genome.wustl.edu/packages/pindel/）：小的插入/缺失发现
-- Samtools（http://samtools.sourceforge.net 或者 http://www.htslib.org/）：mapping后数据分析的工具
-- bamtools（https://github.com/pezmaster31/bamtools）
-- GATK（https://software.broadinstitute.org/gatk/）
-- bcftools（http://www.htslib.org/download/）
-- VarScan（http://massgenomics.org/varscan 或者 http://dkoboldt.github.io/varscan/）
-- scalpel（https://sourceforge.net/projects/scalpel/?source=directory）：Genetic variants discovery and detect indel
-  scalpel的文献：http://www.nature.com/nmeth/journal/v11/n10/full/nmeth.3069.html
-  使用方法参考：http://www.bio-info-trainee.com/2341.html
-- INDELseek（https://github.com/tommyau/indelseek）：检测indel
-- ScanIndel（https://github.com/cauyrd/ScanIndel）
-- Snippy（https://github.com/tseemann/snippy）：bacterial SNP and indel calling
-- Picard（http://broadinstitute.github.io/picard/ 或者https://github.com/broadinstitute/picard）：java程序
-- SpeedSeq：（https://github.com/hall-lab/speedseq）由华盛顿大学医学院等机构的研究人员开发。它利用低成本的服务器，在短短的13小时内即可完成50x人类基因组的比对、变异检测和功能注释。这解决了目前WGS生物信息学的瓶颈。可应用于WGS、WES、panel测序数据。
-  SpeedSeq文献：http://www.nature.com/nmeth/journal/v12/n10/full/nmeth.3505.html
-  可参考：http://www.biotrainee.com/thread-338-1-1.html
-- Sequence Variant Analyzer（http://www.svaproject.org）：在基因组背景下显示变异
-- HugeSeq（https://github.com/StanfordBioinformatics/HugeSeq）：结构变异的pipeline
-  参考：http://blog.csdn.net/alex6plus7/article/details/50236375
-- KvarQ（https://github.com/kvarq/kvarq）：Targeted and direct variant calling in FastQ reads of bacterial genomes。
 
-- nesoni：https://github.com/Victorian-Bioinformatics-Consortium/nesoni  a toolkit for NGS SNP calling / RNA-Seq DGE / read cleaning。
-- RedDog：https://github.com/katholt/RedDog  a workflow pipeline for short read length
+- Dindel：[Dindel](http://sites.google.com/site/keesalbers/soft/dindel) - 小的插入/缺失发现
+- Pindel：[Pindel](http://gmt.genome.wustl.edu/packages/pindel/) - 小的插入/缺失发现
+- Samtools：[Samtools](http://samtools.sourceforge.net) - [备用地址](http://www.htslib.org/)：mapping后数据分析的工具
+- bamtools：[bamtools](https://github.com/pezmaster31/bamtools)
+- GATK：[GATK](https://software.broadinstitute.org/gatk/)
+- bcftools：[bcftools](http://www.htslib.org/download/)
+- VarScan：[VarScan](http://massgenomics.org/varscan) - [备用地址](http://dkoboldt.github.io/varscan/)
+- scalpel：[scalpel](https://sourceforge.net/projects/scalpel/?source=directory) - Genetic variants discovery and detect indel
+  scalpel的[文献](http://www.nature.com/nmeth/journal/v11/n10/full/nmeth.3069.html)
+  使用方法[参考](http://www.bio-info-trainee.com/2341.html)
+- INDELseek：[INDELseek](https://github.com/tommyau/indelseek) - 检测indel
+- ScanIndel：[ScanIndel](https://github.com/cauyrd/ScanIndel)
+- Snippy：[Snippy](https://github.com/tseemann/snippy) - bacterial SNP and indel calling
+- Picard：[Picard](http://broadinstitute.github.io/picard/) - [备用地址](https://github.com/broadinstitute/picard)：java程序
+- SpeedSeq：[SpeedSeq](https://github.com/hall-lab/speedseq) - 由华盛顿大学医学院等机构的研究人员开发。它利用低成本的服务器，在短短的13小时内即可完成50x人类基因组的比对、变异检测和功能注释。这解决了目前WGS生物信息学的瓶颈。可应用于WGS、WES、panel测序数据。
+  SpeedSeq[文献](http://www.nature.com/nmeth/journal/v12/n10/full/nmeth.3505.html)
+  可[参考](http://www.biotrainee.com/thread-338-1-1.html)
+- Sequence Variant Analyzer：[Sequence Variant Analyzer](http://www.svaproject.org) - 在基因组背景下显示变异
+- HugeSeq：[HugeSeq](https://github.com/StanfordBioinformatics/HugeSeq) - 结构变异的pipeline
+  [参考](http://blog.csdn.net/alex6plus7/article/details/50236375)
+- KvarQ：[KvarQ](https://github.com/kvarq/kvarq) - Targeted and direct variant calling in FastQ reads of bacterial genomes。
+
+- nesoni：[nesoni](https://github.com/Victorian-Bioinformatics-Consortium/nesoni) - a toolkit for NGS SNP calling / RNA-Seq DGE / read cleaning。
+- RedDog：[RedDog](https://github.com/katholt/RedDog) - a workflow pipeline for short read length
   sequencing analysis, including the read mapping task, through to variant
   detection, followed by analyses (SNPs only).
-  Single  nucleotide  polymorphisms  (SNPs)  with  Phred  quality  score  ≥30  were 
-  identified  in  each  isolate  using  SAMTools.
+  Single nucleotide polymorphisms (SNPs) with Phred quality score ≥30 were
+  identified in each isolate using SAMTools.
 
 ## 9、SV、SNV
-- LUMPY（https://github.com/arq5x/lumpy-sv）：a general probabilistic framework for structural variant discovery.
-- MetaSV：（http://bioinform.github.io/metasv/）An accurate and integrative structural-variant caller.
-- MetaSV文献：https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btv204
-- FindSV：（https://github.com/dnil/FindSV）
-- SomaticSniper（http://gmt.genome.wustl.edu/packages/somatic-sniper/ 或者 https://github.com/genome/somatic-sniper）：检测SNV
 
-FindTranslocations,CNVnator and fermikit
+SV
 
-SV、CNV
-- SV-Autopilot（https://github.com/ALLBio/allbiotc2）
-- GASV：http://compbio.cs.brown.edu/projects/gasv/  或者https://github.com/ZhihaoXie/GASV_
-  GASV文档：https://vcru.wisc.edu/simonlab/bioinformatics/programs/gasv/GASV_UserGuide.pdf
-- srGASV：https://github.com/dstorch/srGASV
-- MultiBreak-SV：http://compbio.cs.brown.edu/projects/multibreaksv/ 或者 https://github.com/raphael-group/multibreak-sv
-- SVDetect：https://sourceforge.net/projects/svdetect/
-- PEMer：detecting SVs from paired-end reads. http://sv.gersteinlab.org/pemer/  或者 https://github.com/BIGLabHYU/PEMer
-- VariationHunter: An tool for identifying structural variations from paired-end WGS data.  https://sourceforge.net/projects/variationhunter/
-- vaquita：https://github.com/seqan/vaquita  Identification of structural variations
+- LUMPY：[LUMPY](https://github.com/arq5x/lumpy-sv) - a general probabilistic framework for structural variant discovery.
+- MetaSV：[MetaSV](http://bioinform.github.io/metasv/) - An accurate and integrative structural-variant caller.
+  - MetaSV文献：[MetaSV文献](https://academic.oup.com/bioinformatics/article-lookup/doi/10.1093/bioinformatics/btv204)
+- FindSV：[FindSV](https://github.com/dnil/FindSV)
+- SomaticSniper：[SomaticSniper](http://gmt.genome.wustl.edu/packages/somatic-sniper/) - [备用地址](https://github.com/genome/somatic-sniper)：检测SNV
+- FindTranslocation：[FindTranslocation](https://github.com/vezzi/TIDDIT)
+- fermikit：[fermikit](https://github.com/lh3/fermikit)
+- SV-Autopilot：[SV-Autopilot](https://github.com/ALLBio/allbiotc2)
+- GASV：[GASV](http://compbio.cs.brown.edu/projects/gasv/) - [备用地址](https://github.com/ZhihaoXie/GASV_)
+  GASV[文档](https://vcru.wisc.edu/simonlab/bioinformatics/programs/gasv/GASV_UserGuide.pdf)
+- srGASV：[srGASV](https://github.com/dstorch/srGASV)
+- MultiBreak-SV：[MultiBreak-SV](http://compbio.cs.brown.edu/projects/multibreaksv/) - [备用地址](https://github.com/raphael-group/multibreak-sv)
+- SVDetect：[SVDetect](https://sourceforge.net/projects/svdetect/)
+- PEMer：[PEMer](http://sv.gersteinlab.org/pemer/) - detecting SVs from paired-end reads. 或者 [备用地址](https://github.com/BIGLabHYU/PEMer)
+- VariationHunter：[VariationHunter](https://sourceforge.net/projects/variationhunter/) - An tool for identifying structural variations from paired-end WGS data.
+- vaquita：[vaquita](https://github.com/seqan/vaquita) - Identification of structural variations
   \# 注意，vaquita需要的ref序列必须以 .fa 为后缀。
-- svmerge：https://sourceforge.net/projects/svmerge/ A tool for SVs analysis by integrating calls from several existing SV callers.
-- breakway：https://sourceforge.net/projects/breakway/  identification of genomic breakpoints
-- CNT-MD：Copy-Number Tree Mixture Deconvolution http://compbio.cs.brown.edu/projects/cnt-md/ 或者 https://github.com/raphael-group/CNT-MD
-- CNT-ILP: Copy-Number Tree  http://compbio.cs.brown.edu/projects/cnt-ilp/  或者https://github.com/raphael-group/CNT-ILP
-- Whole Exome Sequencing Analysis Pipeline： http://metamoodics.org/wiki/index.php?title=Whole_Exome_Sequencing_Analysis_Pipeline
-- BSseeker2（https://github.com/BSSeeker/BSseeker2）：A versatile aligning pipeline for bisulfite sequencing data.
+- svmerge：[svmerge](https://sourceforge.net/projects/svmerge/) - A tool for SVs analysis by integrating calls from several existing SV callers.
+- breakway：[breakway](https://sourceforge.net/projects/breakway/) - identification of genomic breakpoints
+- CNT-MD：[CNT-MD](http://compbio.cs.brown.edu/projects/cnt-md/) - Copy-Number Tree Mixture Deconvolution 或者 [备用地址](https://github.com/raphael-group/CNT-MD)
+- CNT-ILP：[CNT-ILP](http://compbio.cs.brown.edu/projects/cnt-ilp/) - Copy-Number Tree 或者[备用地址](https://github.com/raphael-group/CNT-ILP)
+- BSseeker2：[BSseeker2](https://github.com/BSSeeker/BSseeker2) - A versatile aligning pipeline for bisulfite sequencing data.
+- Sniffles：[Sniffles](https://github.com/fritzsedlazeck/Sniffles) - Sniffles is a structural variation caller using third generation sequencing (PacBio or Oxford Nanopore).
+- NGMLR：[NGMLR](https://github.com/philres/ngmlr) - NGMLR is a long-read mapper designed to align PacBio or Oxford Nanopore (standard and ultra-long) to a reference genome with a focus on reads that span structural variations.
 
-更多工具见：http://www.knowgene.com/question/8855
+CNV
 
-相关工具：https://omictools.com/indel-detection-category
+- CNVnator：[CNVnator](https://github.com/abyzovlab/CNVnator)
+- PopSV：[PopSV](https://github.com/jmonlong/PopSV) - Human copy number variants detection
 
-- PopSV：https://github.com/jmonlong/PopSV  Human copy number variants detection
+- Whole Exome Sequencing Analysis Pipeline：[Whole Exome Sequencing Analysis Pipeline](http://metamoodics.org/wiki/index.php?title=Whole_Exome_Sequencing_Analysis_Pipeline)
 
-- Sniffles：https://github.com/fritzsedlazeck/Sniffles Sniffles is a structural variation caller using third generation sequencing (PacBio or Oxford Nanopore). 
-- NGMLR：https://github.com/philres/ngmlr  NGMLR is a long-read mapper designed to align PacBio or Oxford Nanopore (standard and ultra-long) to a reference genome with a focus on reads that span structural variations.
+更多工具见：[工具](http://www.knowgene.com/question/8855)
 
-遗传变异软件综述：https://academic.oup.com/bib/article/15/2/256/210976/A-survey-of-tools-for-variant-analysis-of-next
-一些软件工具列表：http://seqanswers.com/forums/showthread.php?t=43
+相关工具：[工具](https://omictools.com/indel-detection-category)
 
+遗传变异软件综述：[综述](https://academic.oup.com/bib/article/15/2/256/210976/A-survey-of-tools-for-variant-analysis-of-next)
 
-## 10、Chip-Seq		
+一些软件工具列表：[工具](http://seqanswers.com/forums/showthread.php?t=43)
 
-- Findpeaks（http://vancouvershortr.sourceforge.net）
+## 10、Chip-Seq
 
-## 11、RNA-Seq		
-- Cufflinks（http://cufflinks.cbcb.umd.edu）：测定转录本丰度
-- Tophat（http://ccb.jhu.edu/software/tophat/index.shtml）：剪接点定位
-- Trinity （https://github.com/trinityrnaseq/trinityrnaseq/wiki）
-- Oases（http://www.ebi.ac.uk/~zerbino/oases/）：根据转录组数据拼接
-- Trans-ABySS（http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss）：转录组拼接
-- HISAT（http://ccb.jhu.edu/software/hisat/index.shtml）：转录组差异表达分析
-- StringTie（http://ccb.jhu.edu/software/stringtie/）：组装转录本并预计表达水平
-- Ballgown（https://github.com/alyssafrazee/ballgown）：RNA-seq的差异表达分析
-  拓展阅读：利用tophat和Cufflinks做转录组差异表达分析的步骤详解
-  更多rna方面的软件：http://www.mybiosoftware.com/rna-analysis
+- Findpeaks：[Findpeaks](http://vancouvershortr.sourceforge.net)
 
-  
+## 11、RNA-Seq
+
+- Cufflinks：[Cufflinks](http://cufflinks.cbcb.umd.edu) - 测定转录本丰度
+- Tophat：[Tophat](http://ccb.jhu.edu/software/tophat/index.shtml) - 剪接点定位
+- Trinity：[Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki)
+- Oases：[Oases](http://www.ebi.ac.uk/~zerbino/oases/) - 根据转录组数据拼接
+- Trans-ABySS：[Trans-ABySS](http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss) - 转录组拼接
+- HISAT：[HISAT](http://ccb.jhu.edu/software/hisat/index.shtml) - 转录组差异表达分析
+- StringTie：[StringTie](http://ccb.jhu.edu/software/stringtie/) - 组装转录本并预计表达水平
+- Ballgown：[Ballgown](https://github.com/alyssafrazee/ballgown) - RNA-seq的差异表达分析
+
 ## 12、Genome visualisers and editors
-- Integrated Genome Browser（http://www.bioviz.org/igb/）
-- Integrative Genomics Viewer（http://www.broadinstitute.org/software/igv/）
-- Artemis（http://www.sanger.ac.uk/science/tools/artemis）
-- CLC BioWorkbench（https://www.qiagenbioinformatics.com/products/clc-genomics-workbench/）
-- Geneious（http://www.geneious.com/）http://www.geneious.com/features/assembly-mapping
-- IGV （www.broadinstitute.org/igv/）
 
+- Integrated Genome Browser：[Integrated Genome Browser](http://www.bioviz.org/igb/)
+- Integrative Genomics Viewer：[Integrative Genomics Viewer](http://www.broadinstitute.org/software/igv/)
+- Artemis：[Artemis](http://www.sanger.ac.uk/science/tools/artemis)
+- CLC BioWorkbench：[CLC BioWorkbench](https://www.qiagenbioinformatics.com/products/clc-genomics-workbench/)
+- Geneious：[Geneious](http://www.geneious.com/) - [链接](http://www.geneious.com/features/assembly-mapping)
+- IGV - www.broadinstitute.org/igv/
 
 ## 13、绘图
-- hemi（http://hemi.biocuckoo.org/index.php）：图形化绘制heatmap
-- clusterProfiler: https://github.com/GuangchuangYu/clusterProfiler：statistical analysis and visualization of functional profiles for genes and gene clusters
 
+- hemi：[hemi](http://hemi.biocuckoo.org/index.php) - 图形化绘制heatmap
+- clusterProfiler：[clusterProfiler](https://github.com/GuangchuangYu/clusterProfiler) - ：statistical analysis and visualization of functional profiles for genes and gene clusters
 
 ## 14、圈图
-- circos（http://circos.ca）
-- BioCircos：http://bioinfo.ibp.ac.cn/biocircos/index.php
-- BRIG（http://brig.sourceforge.net/）
-  文档：http://brig.sourceforge.net/brig-tutorial-1-whole-genome-comparisons/
-  https://sourceforge.net/projects/brig/files/
-- OGDRAW（http://ogdraw.mpimp-golm.mpg.de/index.shtml）：细胞器基因组圈图的绘制
-- DNAPlotter（http://www.sanger.ac.uk/science/tools/dnaplotter）
+
+- circos：[circos](http://circos.ca)
+- BioCircos：[BioCircos](http://bioinfo.ibp.ac.cn/biocircos/index.php)
+- BRIG：[BRIG](http://brig.sourceforge.net/)
+  [文档](http://brig.sourceforge.net/brig-tutorial-1-whole-genome-comparisons/)
+  [链接](https://sourceforge.net/projects/brig/files/)
+- OGDRAW：[OGDRAW](http://ogdraw.mpimp-golm.mpg.de/index.shtml) - 细胞器基因组圈图的绘制
+- DNAPlotter：[DNAPlotter](http://www.sanger.ac.uk/science/tools/dnaplotter)
 
 ## 15、编码基因预测
-- Glimmer（http://ccb.jhu.edu/software/glimmer/index.shtml）：针对细菌、古菌、病毒的基因预测
-- GeneMarkS（http://topaz.gatech.edu/GeneMark/）：细菌、古菌、病毒、噬菌体、病毒和转录组的基因预测
-- MetaGeneMark：Genemark的一个针对metagenome的预测软件
-- Prodigal（http://prodigal.ornl.gov/）：针对原核生物的基因预测（高GC可用），metaGenome也适用，但不适用与RNA gene and viral gene预测。
-- MetaGene Annotator（MetaGeneAnnotator）（http://metagene.cb.k.u-tokyo.ac.jp/）：a gene-finding program for prokaryote and phage. metaGenome也适用。
-- FragGeneScan（https://github.com/COL-IU/FragGeneScan.git）：It can be applied to predict prokaryotic genes in incomplete assemblies or complete genomes. 
-- Orphelia（http://orphelia.gobics.de/）：Orphelia is a metagenomic ORF finding tool for the prediction of protein coding genes in short, environmental DNA sequences with unknown phylogenetic origin。
-- GenScan（http://genes.mit.edu/GENSCAN.html）：脊椎动物、拟南芥和玉米的基因预测工具
-- Pfam_Scan（http://pfam.xfam.org/）：蛋白结构域的预测
-  PfamScan工具（ftp://ftp.ebi.ac.uk/pub/databases/Pfam/Tools/）
-- tRNAscan-SE（http://lowelab.ucsc.edu/tRNAscan-SE/）：tRNA预测
-- ARAGORN：http://130.235.46.10/ARAGORN/ 或者 http://mbio-serv2.mbioekol.lu.se/ARAGORN/Downloads/  ARAGORN detects tRNA, mtRNA, and tmRNA genes.
-- RNAmmer（http://www.cbs.dtu.dk/services/RNAmmer/）：rRNA预测
-- Barrnap（http://www.vicbioinformatics.com/software.barrnap.shtml 或者 https://github.com/tseemann/barrnap）：rRNA预测识别
-- snoGPS（http://lowelab.ucsc.edu/snoGPS/）：Search for H/ACA snoRNA genes in a genomic sequence
-- Snoscan（http://lowelab.ucsc.edu/snoscan/）：Search for C/D box methylation guide snoRNA genes in a genomic sequence
 
-- OrfM：https://github.com/wwood/OrfM simple and not slow ORF caller。
-- getorf：http://emboss.sourceforge.net/apps/cvs/emboss/apps/getorf.html  Find and extract open reading frames (ORFs).
-- checktrans：http://emboss.open-bio.org/rel/rel6/apps/checktrans.html  Reports STOP codons and ORF statistics of a protein.
-- plotorf：http://emboss.sourceforge.net/apps/release/6.0/emboss/apps/plotorf.html  Plot potential open reading frames in a nucleotide sequence.
-- ORFfinder：ftp://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/ORFfinder/linux-i64/
-  ORF Finder（online工具）：http://www.bioinformatics.org/sms2/orf_find.html
-- AntiFam：ftp://ftp.ebi.ac.uk/pub/databases/Pfam/AntiFam/  识别假的ORF
-  AntiFam的文章：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3308159/
-  http://xfam.org/
+- Glimmer：[Glimmer](http://ccb.jhu.edu/software/glimmer/index.shtml) - 针对细菌、古菌、病毒的基因预测
+- GeneMarkS：[GeneMarkS](http://topaz.gatech.edu/GeneMark/) - 细菌、古菌、病毒、噬菌体、病毒和转录组的基因预测
+- MetaGeneMark：[MetaGeneMark](https://genemark.bme.gatech.edu/gmhmmp.cgi) - Genemark的一个针对metagenome的预测软件
+- MetaGeneMark-2：[MetaGeneMark-2](https://github.com/gatech-genemark/MetaGeneMark-2) - Improved Gene Prediction in Metagenomes.
+- Prodigal：[Prodigal](http://prodigal.ornl.gov/) - 针对原核生物的基因预测（高GC可用），metaGenome也适用，但不适用与RNA gene and viral gene预测。
+- MetaGene Annotator：[MetaGene Annotator](http://metagene.cb.k.u-tokyo.ac.jp/) - （MetaGeneAnnotator）：a gene-finding program for prokaryote and phage. metaGenome也适用。
+- FragGeneScan：[FragGeneScan](https://github.com/COL-IU/FragGeneScan.git) - It can be applied to predict prokaryotic genes in incomplete assemblies or complete genomes.
+- Orphelia：[Orphelia](http://orphelia.gobics.de/) - Orphelia is a metagenomic ORF finding tool for the prediction of protein coding genes in short, environmental DNA sequences with unknown phylogenetic origin。
+- GenScan：[GenScan](http://genes.mit.edu/GENSCAN.html) - 脊椎动物、拟南芥和玉米的基因预测工具
+- Pfam_Scan：[Pfam_Scan](http://pfam.xfam.org/) - 蛋白结构域的预测
+  PfamScan[工具](ftp://ftp.ebi.ac.uk/pub/databases/Pfam/Tools/)
+- tRNAscan-SE：[tRNAscan-SE](http://lowelab.ucsc.edu/tRNAscan-SE/) - tRNA预测
+- ARAGORN：[ARAGORN](http://130.235.46.10/ARAGORN/) - [备用地址](http://mbio-serv2.mbioekol.lu.se/ARAGORN/Downloads/) ARAGORN detects tRNA, mtRNA, and tmRNA genes.
+- RNAmmer：[RNAmmer](http://www.cbs.dtu.dk/services/RNAmmer/) - rRNA预测
+- Barrnap：[Barrnap](http://www.vicbioinformatics.com/software.barrnap.shtml) - [备用地址](https://github.com/tseemann/barrnap)：rRNA预测识别
+- snoGPS：[snoGPS](http://lowelab.ucsc.edu/snoGPS/) - Search for H/ACA snoRNA genes in a genomic sequence
+- Snoscan：[Snoscan](http://lowelab.ucsc.edu/snoscan/) - Search for C/D box methylation guide snoRNA genes in a genomic sequence
+
+- OrfM：[OrfM](https://github.com/wwood/OrfM) - simple and not slow ORF caller。
+- getorf：[getorf](http://emboss.sourceforge.net/apps/cvs/emboss/apps/getorf.html) - Find and extract open reading frames (ORFs).
+- checktrans：[checktrans](http://emboss.open-bio.org/rel/rel6/apps/checktrans.html) - Reports STOP codons and ORF statistics of a protein.
+- plotorf：[plotorf](http://emboss.sourceforge.net/apps/release/6.0/emboss/apps/plotorf.html) - Plot potential open reading frames in a nucleotide sequence.
+- ORFfinder：[ORFfinder](ftp://ftp.ncbi.nlm.nih.gov/genomes/TOOLS/ORFfinder/linux-i64/)
+  ORF Finder（online工具）：[工具](http://www.bioinformatics.org/sms2/orf_find.html)
+- AntiFam：[AntiFam](ftp://ftp.ebi.ac.uk/pub/databases/Pfam/AntiFam/) - 识别假的ORF
+  AntiFam的[文章](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3308159/)
+  [链接](http://xfam.org/)
   如何执行AntiFam?
   hmmsearch --domtblout test_vs_antifam.out --tblout test_vs_antifam.out2 --domE 1e-10 --cpu 12 ../AntiFam.hmm test.faa
 
-  
 ## 16、注释流程（pipeline）软件
-- Manatee（http://manatee.sourceforge.net/igs/index.shtml）：Manatee is a web-based tool used to perform manual functional annotation.
-- Ergatis（http://ergatis.sourceforge.net/index.html）、（https://sourceforge.net/projects/ergatis/）
-- RAST（http://www.nmpdr.org/FIG/wiki/view.cgi/FIG/RapidAnnotationServer 或者 http://rast.nmpdr.org/）：annotating bacterial and archaeal genomes（在线）
-- prokka（http://www.vicbioinformatics.com/software.prokka.shtml）：针对原核的注释
-- Annotationtools：https://github.com/rbotts/Annotationtools  Python script for annotating sequences from fasta file (Bacterial). Uses GeneMarkS and BioPython. （针对原核生物）
 
-- RATT(Rapid Annotation Transfer Tool)http://ratt.sourceforge.net/：基于参考基因组进行快速基因功能注释。RATT is not now part of PAGIT.
-- PAGIT（http://www.sanger.ac.uk/science/tools/pagit）（Post Assembly Genome Improvement Toolkit）. 
+- prokka：[prokka](http://www.vicbioinformatics.com/software.prokka.shtml) - 针对原核的注释
+- Annotationtools：[Annotationtools](https://github.com/rbotts/Annotationtools) - Python script for annotating sequences from fasta file (Bacterial). Uses GeneMarkS and BioPython. （针对原核生物）
+- Manatee：[Manatee](http://manatee.sourceforge.net/igs/index.shtml) - Manatee is a web-based tool used to perform manual functional annotation.
+- Ergatis：[Ergatis](http://ergatis.sourceforge.net/index.html) - [链接](https://sourceforge.net/projects/ergatis/)
+- RAST：[RAST](http://www.nmpdr.org/FIG/wiki/view.cgi/FIG/RapidAnnotationServer) - [备用地址](http://rast.nmpdr.org/)：annotating bacterial and archaeal genomes（在线）
 
+- RATT：[RATT](http://ratt.sourceforge.net/) - (Rapid Annotation Transfer Tool)：基于参考基因组进行快速基因功能注释。RATT is not now part of PAGIT.
+- PAGIT：[PAGIT](http://www.sanger.ac.uk/science/tools/pagit) - （Post Assembly Genome Improvement Toolkit）.
 
 ## 17、组装后基本数据统计
-- assembly-stats（https://github.com/sanger-pathogens/assembly-stats）
-- assembly-stats（https://github.com/rjchallis/assembly-stats）
-- assemblyStatics（https://github.com/WenchaoLin/assemblyStatics）
-- velvet-stats（https://github.com/ajmazurie/velvet-stats）
-- gstawk（https://github.com/mspopgen/gstawk）
-- seqStats(https://github.com/peteashton/seqStats):Two figures are produced: one contains the length distribution histogram and a cumulative length plot, the other plots GC vs sequence length.
 
-- TBtools(https://github.com/CJ-Chen/TBtools)
+- assembly-stats：[assembly-stats](https://github.com/sanger-pathogens/assembly-stats)
+- assembly-stats：[assembly-stats](https://github.com/rjchallis/assembly-stats)
+- assemblyStatics：[assemblyStatics](https://github.com/WenchaoLin/assemblyStatics)
+- velvet-stats：[velvet-stats](https://github.com/ajmazurie/velvet-stats)
+- gstawk：[gstawk](https://github.com/mspopgen/gstawk)
+- seqStats：[seqStats](https://github.com/peteashton/seqStats) - Two figures are produced: one contains the length distribution histogram and a cumulative length plot, the other plots GC vs sequence length.
 
+- TBtools：[TBtools](https://github.com/CJ-Chen/TBtools)
 
 ## 18、Kmer分析基因大小评估
-- GCE（ftp://ftp.genomics.org.cn/pub/gce/）：是华大基因用于基因组评估的软件
-- GCE的文献：https://www.researchgate.net/publication/255722390_Estimation_of_genomic_characteristics_by_analyzing_k-mer_frequency_in_de_novo_genome_projects
-  使用说明博客：https://www.plob.org/article/9388.html
-- KmerGenie（http://kmergenie.bx.psu.edu/）
-- Jellyfish （http://www.genome.umd.edu/jellyfish.html）
-  Jellyfish的用法说明：http://www.chenlianfu.com/?p=806
+
+- GCE：[GCE](ftp://ftp.genomics.org.cn/pub/gce/) - 是华大基因用于基因组评估的软件
+- GCE的文献：[GCE的文献](https://www.researchgate.net/publication/255722390_Estimation_of_genomic_characteristics_by_analyzing_k-mer_frequency_in_de_novo_genome_projects)
+  使用说明博客：[说明](https://www.plob.org/article/9388.html)
+- KmerGenie：[KmerGenie](http://kmergenie.bx.psu.edu/)
+- Jellyfish：[Jellyfish](http://www.genome.umd.edu/jellyfish.html)
+  Jellyfish的用法[说明](http://www.chenlianfu.com/?p=806)
 - KmerFreq
 
-
 ## 19、外显子组相关的软件
-- CNV检测的软件：CoNIFER（http://conifer.sourceforge.net/）
-- SNP注释软件：annovar（http://annovar.openbioinformatics.org/en/latest/）
-- 变异解读：[Folklore](https://folklore.helena.bio/acmg-variant-classification) — 免费、无需注册的 ACMG/AMP 人类核基因组生殖系变异分类网页工具。每次查询一个受支持的 GRCh38 单核苷酸变异或小于 50 bp 的简单插入/缺失，支持 HGVS、SPDI、rsID 或坐标输入；展示自动分类、报告的判定标准、注释、证据及可用的来源链接，ClinVar 解读单独显示。临床使用前需由具备资质的专业人员复核。[BRCA1 示例](https://folklore.helena.bio/examples/acmg-variant-classification)。
 
+- CNV检测的软件：[CNV检测的软件](http://conifer.sourceforge.net/) - CoNIFER
+- SNP注释软件：[SNP注释软件](http://annovar.openbioinformatics.org/en/latest/) - annovar
+- 变异解读：[folklore](https://folklore.helena.bio/acmg-variant-classification) - 免费、无需注册的 ACMG/AMP 人类核基因组生殖系变异分类网页工具。每次查询一个受支持的 GRCh38 单核苷酸变异或小于 50 bp 的简单插入/缺失，支持 HGVS、SPDI、rsID 或坐标输入；展示自动分类、报告的判定标准、注释、证据及可用的来源链接，ClinVar 解读单独显示。临床使用前需由具备资质的专业人员复核。[BRCA1 示例](https://folklore.helena.bio/examples/acmg-variant-classification)。
 
 ## 20、GO注释
-- blast2go（https://www.blast2go.com/）
-- GO_Annotation_Plot （https://github.com/ZhihaoXie/GO_Annotation_Plot.git）
 
+- blast2go：[blast2go](https://www.blast2go.com/)
+- GO_Annotation_Plot：[GO_Annotation_Plot](https://github.com/ZhihaoXie/GO_Annotation_Plot.git)
 
 ## 21、比较基因组学
-- Sibelia: A comparative genomics tool（http://bioinf.spbau.ru/en/sibelia）
 
+- Sibelia：[Sibelia](http://bioinf.spbau.ru/en/sibelia) - A comparative genomics tool
 
 ## 22、进化树
-- Pairdist（https://github.com/frederic-mahe/pairdist）：用于建NJ树
-- TreeBest（https://github.com/lh3/treebest 或者 http://treesoft.sourceforge.net/）
-- TreeBest的使用：http://blog.sina.com.cn/s/blog_620b35790100mcp6.html
-- Fasttree（http://www.microbesonline.org/fasttree/）
-- RAxML（https://sco.h-its.org/exelixis/web/software/raxml/index.html）：ML树工具
-- PhyML（http://www.atgc-montpellier.fr/phyml/）：在线构建ML树的工具，也可以本地执行
-- profileNJ（https://github.com/maclandrol/profileNJ）：使用物种数和NJ树校正Gene tree
-- Figtree（http://tree.bio.ed.ac.uk/software/figtree/）：a graphical viewer of phylogenetic trees and as a program for producing publication-ready figures.
-- Dendroscope（http://dendroscope.org/）：Software for visualizing phylogenetic trees and rooted networks.
-- PATRIC（https://www.patricbrc.org/）：Phylogenetic Tree Builder
 
-- TempEst（http://tree.bio.ed.ac.uk/software/tempest/）TempEst is a tool for investigating the temporal signal and 'clocklikeness' of molecular phylogenies.
+- Pairdist：[Pairdist](https://github.com/frederic-mahe/pairdist) - 用于建NJ树
+- TreeBest：[TreeBest](https://github.com/lh3/treebest) - [备用地址](http://treesoft.sourceforge.net/)
+  - TreeBest的使用：[TreeBest的使用](http://blog.sina.com.cn/s/blog_620b35790100mcp6.html)
+- Fasttree：[Fasttree](http://www.microbesonline.org/fasttree/)
+- RAxML：[RAxML](https://sco.h-its.org/exelixis/web/software/raxml/index.html) - ML树工具
+- PhyML：[PhyML](http://www.atgc-montpellier.fr/phyml/) - 在线构建ML树的工具，也可以本地执行
+- profileNJ：[profileNJ](https://github.com/maclandrol/profileNJ) - 使用物种数和NJ树校正Gene tree
+- PATRIC：[PATRIC](https://www.patricbrc.org/) - Phylogenetic Tree Builder
+- TempEst：[TempEst](http://tree.bio.ed.ac.uk/software/tempest/) - TempEst is a tool for investigating the temporal signal and 'clocklikeness' of molecular phylogenies.
+- Figtree：[Figtree](http://tree.bio.ed.ac.uk/software/figtree/) - a graphical viewer of phylogenetic trees and as a program for producing publication-ready figures.
+- Dendroscope：[Dendroscope](http://dendroscope.org/) - Software for visualizing phylogenetic trees and rooted networks.
+- liftover：[liftover](http://hgdownload.cse.ucsc.edu/admin/exe/) - 用于基因组版本坐标转换[链接](http://genome.ucsc.edu/)
+  [参考](http://www.plob.org/article/9541.html)
 
-- liftover（http://hgdownload.cse.ucsc.edu/admin/exe/）：用于基因组版本坐标转换（http://genome.ucsc.edu/）
-  参考：http://www.plob.org/article/9541.html
-
-
-- splign是NCBI中一个比对cDNA和genome的一个工具，通过splign可以很方便的找到cDNA各个外显子。
-  参考：http://www.plob.org/article/7361.html
-
-  
 ## 23、宏基因组
 
 （1）宏基因组拼接工具
 
 可用的拼接的工具：SOAPdenovo、SPAdes、IDBA、MetaPlatanus、ABySS、CABOG
-- TruSPAdes（http://cab.spbu.ru/software/spades/）：用于宏基因组的拼接
-- MEGAHIT（https://github.com/voutcn/megahit）
-- Ray（https://github.com/sebhtml/ray 或者 http://denovoassembler.sourceforge.net/）：a de novo assembler using MPI 2.2. Ray Meta: scalable de novo metagenome assembly and profiling.
-- Meraga（）
-- Minia （http://minia.genouest.org/）
-- MetaVelvet（http://metavelvet.dna.bio.keio.ac.jp/）：a short read assember for metagenomics
-  可参考：http://blog.sina.com.cn/s/blog_670445240101lg2a.html
-- MetAMOS（https://github.com/marbl/metAMOS）：A metagenomic and isolate assembly and analysis pipeline built with AMOS。
-- Subtractive Assembly（https://sourceforge.net/projects/subtractive-assembly/）：通过拼接来比较宏基因组间的差异。主要目的是降低宏基因组的拼接成本，着眼于发现差异物种和差异基因，先基于原始的reads挑选具有差异kmer的reads，然后将挑选出来的reads进行拼接。
-  可参考：http://blog.sina.com.cn/s/blog_83f77c940102vvwr.html
+
+- TruSPAdes：[TruSPAdes](http://cab.spbu.ru/software/spades/) - 用于宏基因组的拼接
+- MEGAHIT：[MEGAHIT](https://github.com/voutcn/megahit)
+- Ray：[Ray](https://github.com/sebhtml/ray) - [备用地址](http://denovoassembler.sourceforge.net/)：a de novo assembler using MPI 2.2. Ray Meta: scalable de novo metagenome assembly and profiling.
+- Meraga
+- Minia：[Minia](http://minia.genouest.org/)
+- MetaVelvet：[MetaVelvet](http://metavelvet.dna.bio.keio.ac.jp/) - a short read assember for metagenomics
+  可[参考](http://blog.sina.com.cn/s/blog_670445240101lg2a.html)
+- MetAMOS：[MetAMOS](https://github.com/marbl/metAMOS) - A metagenomic and isolate assembly and analysis pipeline built with AMOS。
+- Subtractive Assembly：[Subtractive Assembly](https://sourceforge.net/projects/subtractive-assembly/) - 通过拼接来比较宏基因组间的差异。主要目的是降低宏基因组的拼接成本，着眼于发现差异物种和差异基因，先基于原始的reads挑选具有差异kmer的reads，然后将挑选出来的reads进行拼接。
+  可[参考](http://blog.sina.com.cn/s/blog_83f77c940102vvwr.html)
 
 （2）其他
 
-- MG-RAST（http://metagenomics.anl.gov/） http://evomics.org/learning/genomics/metagenomics/mg-rast/
-- GOTTCHA（https://github.com/LANL-Bioinformatics/GOTTCHA）
-- MIDAS（https://github.com/snayfach/MIDAS）：Metagenomic Intra-Species Diversity Analysis System。Our reference database of bacterial species and associated genomic data resources are available at http://lighthouse.ucsf.edu/MIDAS。
-- MIDAS的文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5088602/
-- checkM（https://github.com/Ecogenomics/CheckM）
+- MG-RAST：[MG-RAST](http://metagenomics.anl.gov/) - [链接](http://evomics.org/learning/genomics/metagenomics/mg-rast/)
+- GOTTCHA：[GOTTCHA](https://github.com/LANL-Bioinformatics/GOTTCHA)
+- MIDAS：[MIDAS](https://github.com/snayfach/MIDAS) - Metagenomic Intra-Species Diversity Analysis System。Our reference database of bacterial species and associated genomic data resources are available at [链接](http://lighthouse.ucsf.edu/MIDAS)。
+- MIDAS的文献：[MIDAS的文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5088602/)
+- checkM：[checkM](https://github.com/Ecogenomics/CheckM)
 
 （3）taxonomic 物种分类
-- Kraken（http://ccb.jhu.edu/software/kraken/）
-- Kaiju（http://kaiju.binf.ku.dk/ 或者 https://github.com/bioinformatics-centre/kaiju）：Kaiju is a program for sensitive taxonomic classification of high-throughput sequencing reads from metagenomic whole genome sequencing or metatranscriptomics experiments.
-- sourmash （pip install -U https://github.com/dib-lab/sourmash/archive/master.zip）
-- MetaPhlAn2（http://segatalab.cibio.unitn.it/tools/metaphlan2/ 或者 https://bitbucket.org/biobakery/metaphlan2/src/default/）
-- mOTU（http://www.bork.embl.de/software/mOTU/）
-- PanPhlAn（http://segatalab.cibio.unitn.it/tools/panphlan/）
-- ConStrains（https://bitbucket.org/luo-chengwei/constrains）：reads 数据作为输入
-  文献：http://www.nature.com/nbt/journal/v33/n10/full/nbt.3319.html
-- Krona（https://github.com/marbl/Krona/wiki）：Taxonomy展示
+
+- Kraken：[Kraken](http://ccb.jhu.edu/software/kraken/)
+- Kaiju：[Kaiju](http://kaiju.binf.ku.dk/) - [备用地址](https://github.com/bioinformatics-centre/kaiju)：Kaiju is a program for sensitive taxonomic classification of high-throughput sequencing reads from metagenomic whole genome sequencing or metatranscriptomics experiments.
+- sourmash：[sourmash](https://github.com/dib-lab/sourmash/archive/master.zip) - pip install -U
+- MetaPhlAn2：[MetaPhlAn2](http://segatalab.cibio.unitn.it/tools/metaphlan2/) - [备用地址](https://bitbucket.org/biobakery/metaphlan2/src/default/)
+- mOTU：[mOTU](http://www.bork.embl.de/software/mOTU/)
+- PanPhlAn：[PanPhlAn](http://segatalab.cibio.unitn.it/tools/panphlan/)
+- ConStrains：[ConStrains](https://bitbucket.org/luo-chengwei/constrains) - reads 数据作为输入
+  [文献](http://www.nature.com/nbt/journal/v33/n10/full/nbt.3319.html)
+- Krona：[Krona](https://github.com/marbl/Krona/wiki) - Taxonomy展示
 
 （4）binning
-- metaBAT：https://bitbucket.org/berkeleylab/metabat
-- ESOM：http://databionic-esom.sourceforge.net/
-- ESOM：https://sourceforge.net/projects/databionic-esom/?source=directory
-- CheckM：http://ecogenomics.github.io/CheckM/ 或者 https://github.com/Ecogenomics/CheckM/releases
-- MetaCluster：http://i.cs.hku.hk/~alse/MetaCluster/
-- MetaBin：http://metabin.riken.jp/
 
+- metaBAT：[metaBAT](https://bitbucket.org/berkeleylab/metabat)
+- ESOM：[ESOM](http://databionic-esom.sourceforge.net/)
+- ESOM：[ESOM](https://sourceforge.net/projects/databionic-esom/?source=directory)
+- CheckM：[CheckM](http://ecogenomics.github.io/CheckM/) - [备用地址](https://github.com/Ecogenomics/CheckM/releases)
+- MetaCluster：[MetaCluster](http://i.cs.hku.hk/~alse/MetaCluster/)
+- MetaBin：[MetaBin](http://metabin.riken.jp/)
 
 （5）其他一些工具
-- tetramerFreqs/Binning：https://github.com/tetramerFreqs/Binning
-- Hawth's Analysis Tools for ArcGIS：http://www.spatialecology.com/htools/overview.php
 
-其他：
-http://www.360doc.com/content/16/0815/17/35684706_583419969.shtml
-
-
-微生物生态研究中常用数据库简介：http://www.cnblogs.com/nkwy2012/p/6396435.html
-
-
-参考：
-http://msb.embopress.org/content/9/1/666 （一篇综述）
-http://www.ebiotrade.com/newsf/2014-8/2014814163301250.htm
-
-
-TaxonKit：https://bioinf.shenwei.me/taxonkit/  Efficient NCBI Taxonomy Toolkit
-
+- tetramerFreqs/Binning：[tetramerFreqs/Binning](https://github.com/tetramerFreqs/Binning)
+- Hawth's Analysis Tools for ArcGIS：[Hawth's Analysis Tools for ArcGIS](http://www.spatialecology.com/htools/overview.php)
+- TaxonKit：[TaxonKit](https://bioinf.shenwei.me/taxonkit/) - Efficient NCBI Taxonomy Toolkit
 
 ## 24、16S微生物多样性
+
 - UNBIAS
 - Vseach
 - usearch
 - NINJA
 
-- SRA Toolkit：https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software
-  http://ncbi.github.io/sra-tools/
-  https://github.com/ncbi/sra-tools
-  如何用fastq-dump把sra格式转成fastq格式(fq格式)：http://www.cnblogs.com/emanlee/archive/2013/04/15/3022328.html
+- SRA Toolkit：[SRA Toolkit](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
+  [链接](http://ncbi.github.io/sra-tools/)
+  [链接](https://github.com/ncbi/sra-tools)
+  如何用fastq-dump把sra格式转成fastq格式(fq格式)：[链接](http://www.cnblogs.com/emanlee/archive/2013/04/15/3022328.html)
 
-  
 ## 25、基因家族预测
-- GFam（http://www.paccanarolab.org/gfam）：GFam is a command-line tool for automatic annotation of gene families.
 
+- GFam：[GFam](http://www.paccanarolab.org/gfam) - GFam is a command-line tool for automatic annotation of gene families.
 
 ## 26、全长转录本
-- SQANTI（https://bitbucket.org/ConesaLab/sqanti）：全长转录组测序新转录结构发现注释工具
-  http://www.ngsgo.com/biology/1436.html
 
-  
+- SQANTI：[SQANTI](https://bitbucket.org/ConesaLab/sqanti) - 全长转录组测序新转录结构发现注释工具
+  [链接](http://www.ngsgo.com/biology/1436.html)
+
 ## 27、COG注释
-- eggNOG-mapper（http://eggnogdb.embl.de/#/app/emapper）
 
-参考：http://diyitui.com/content-1466484195.47288872.html
+- eggNOG-mapper：[eggNOG-mapper](http://eggnogdb.embl.de/#/app/emapper)
 
-
-- ASpipe（https://sourceforge.net/projects/aspipe/）：ASpipe is a pipeline to process GeneSeqer/GMAP alignments and identify alternative splicing (AS) events from the alignments. It requires unix bash, perl 5.0+ with DBI module and MySQL5.0+ to run properly.
+- ASpipe：[ASpipe](https://sourceforge.net/projects/aspipe/) - ASpipe is a pipeline to process GeneSeqer/GMAP alignments and identify alternative splicing (AS) events from the alignments. It requires unix bash, perl 5.0+ with DBI module and MySQL5.0+ to run properly.
 
 ## 28、基因组浏览器
-- UCSC Genome Browser
-  http://genome.ucsc.edu
 
-- Ensembl Genome Browser
-  http://www.ensembl.org
+- UCSC Genome Browser：[UCSC Genome Browser](http://genome.ucsc.edu)
 
-- NCBI Genome Browser
-  http://www.ncbi.nlm.nih.gov/mapview
+- Ensembl Genome Browser：[Ensembl Genome Browser](http://www.ensembl.org)
 
-- GMOD GBrowser
-  http://gmod.org
+- NCBI Genome Browser：[NCBI Genome Browser](http://www.ncbi.nlm.nih.gov/mapview)
 
-- UTGB
-  http://utgenome.org/
+- GMOD GBrowser：[GMOD GBrowser](http://gmod.org)
 
-- IGV (Broad)
-  http://www.broadinstitute.org/igv/
+- UTGB：[UTGB](http://utgenome.org/)
 
-- JBrowser (javascript)
-  http://jbrowse.org/
+- IGV (Broad)：[IGV (Broad)](http://www.broadinstitute.org/igv/)
 
-- Argo Genome Browser (Broad)
- http://www.broadinstitute.org/annotation/argo/
+- JBrowser (javascript)：[JBrowser (javascript)](http://jbrowse.org/)
 
-- DNAnexus
-  https://dnanexus.com/genomes/hg18/public_browse
+- Argo Genome Browser (Broad)：[Argo Genome Browser (Broad)](http://www.broadinstitute.org/annotation/argo/)
 
-- Gaggle Genome Browser
-  http://gaggle.systemsbiology.net/docs/geese/genomebrowser/
+- DNAnexus：[DNAnexus](https://dnanexus.com/genomes/hg18/public_browse)
 
-- Celera Genome Browser
-  http://sourceforge.net/projects/celeragb/files/
+- Gaggle Genome Browser：[Gaggle Genome Browser](http://gaggle.systemsbiology.net/docs/geese/genomebrowser/)
 
-- Apollo Genome Annotation Curation Tool
-  http://apollo.berkeleybop.org/current/index.html
+- Celera Genome Browser：[Celera Genome Browser](http://sourceforge.net/projects/celeragb/files/)
 
-  
+- Apollo Genome Annotation Curation Tool：[Apollo Genome Annotation Curation Tool](http://apollo.berkeleybop.org/current/index.html)
 
-参考：http://www.dxy.cn/bbs/thread/1385361#1385361
-Map viewer的使用指南：http://www.dxy.cn/bbs/thread/1385361#1385361
-
+Map viewer的使用指南：[使用](http://www.dxy.cn/bbs/thread/1385361#1385361)
 
 NCBI使用 build 36这样的版本号；而ucsc等使用诸如human genome的hg18,hg19这样的版本号；ensembl呢，有自己的release版本，但是数据采用NCBI的编号。
 两种风格的版本号有对应关系，比如human genome： hg19 = GRCh37，或者Build 38 patch release 7对应 GRCh38.p7。
 
-
 其他工具：
-- HUMAnN2（https://bitbucket.org/biobakery/humann2/wiki/Home）：
 
+- HUMAnN2：[HUMAnN2](https://bitbucket.org/biobakery/humann2/wiki/Home)
 
 ## 29、pan-genomes analysis
-- Roary（http://sanger-pathogens.github.io/Roary/）：rapid large-scale prokaryote pan genome analysis
-  Roary文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4817141/
-- BPGA（http://www.iicb.res.in/bpga/index.html 或者 https://sourceforge.net/projects/bpgatool/）
+
+- Roary：[Roary](http://sanger-pathogens.github.io/Roary/) - rapid large-scale prokaryote pan genome analysis
+  Roary[文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4817141/)
+- BPGA：[BPGA](http://www.iicb.res.in/bpga/index.html) - [备用地址](https://sourceforge.net/projects/bpgatool/)
   BPGA is an ultra-fast software package that provides comprehensive pan genome analysis of microorganisms.（仅针对原核）
-  BPGA文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4829868/pdf/srep24373.pdf
-- PanGP （https://pangp.ybzhao.com/）PanGP is a tool for quickly analyzing bacterial pan-genome profile.（泛基因组特征分析、特征曲线）
-- panOCT（https://sourceforge.net/projects/panoct/?source=directory）
-- panOCT文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3526259/
-- LS-BSR（https://github.com/jasonsahl/LS-BSR）
-- BSR（http://bsr.igs.umaryland.edu/）
-  LS-BSR文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3976120/
-- PGAP：pan-genomes analysis pipeline. （原核生物泛基因组学分析的自动化软件）
-  https://github.com/kastman/pgap-docker
-  https://sourceforge.net/projects/pgap/
-  PGAP文献：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3268234/
+  BPGA[文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4829868/pdf/srep24373.pdf)
+- PanGP：[PanGP](https://pangp.ybzhao.com/) - PanGP is a tool for quickly analyzing bacterial pan-genome profile.（泛基因组特征分析、特征曲线）
+- panOCT：[panOCT](https://sourceforge.net/projects/panoct/?source=directory)
+- panOCT文献：[panOCT文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3526259/)
+- LS-BSR：[LS-BSR](https://github.com/jasonsahl/LS-BSR)
+- BSR：[BSR](http://bsr.igs.umaryland.edu/)
+  LS-BSR[文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3976120/)
+- PGAP：[PGAP](https://github.com/kastman/pgap-docker) - pan-genomes analysis pipeline. （原核生物泛基因组学分析的自动化软件）
+  [链接](https://sourceforge.net/projects/pgap/)
+  PGAP[文献](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3268234/)
   \# PGAP 太耗时了！！慎用！
-- metaPGAP（https://github.com/mitul-patel/metaPGAP）：metagenomic Pan Genome Analysis Pipeline 
-- AGAPE（https://github.com/yeastgenome/AGAPE）：针对酵母的pan-genome analysis
+- metaPGAP：[metaPGAP](https://github.com/mitul-patel/metaPGAP) - metagenomic Pan Genome Analysis Pipeline
+- AGAPE：[AGAPE](https://github.com/yeastgenome/AGAPE) - 针对酵母的pan-genome analysis
 
-- Parsnp（http://harvest.readthedocs.io/en/latest/content/parsnp.html 或者 https://github.com/marbl/parsnp） Rapid core genome multi-alignment.(bacterial genomes )
-  Parsnp的文章：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4262987/
+- Parsnp：[Parsnp](http://harvest.readthedocs.io/en/latest/content/parsnp.html) - [备用地址](https://github.com/marbl/parsnp) Rapid core genome multi-alignment.(bacterial genomes )
+  Parsnp的[文章](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4262987/)
 
-- PGAP-X：https://pgapx.ybzhao.com/  PGAP-X is a microbial comparative genomic analysis platform with graphic interface.（比较基因组分析图形化接口）
-
+- PGAP-X：[PGAP-X](https://pgapx.ybzhao.com/) - PGAP-X is a microbial comparative genomic analysis platform with graphic interface.（比较基因组分析图形化接口）
 
 ## 30、转座子
-- LTR_retriever（https://github.com/oushujun/LTR_retriever）：识别LTR retrotransposons
 
+- LTR_retriever：[LTR_retriever](https://github.com/oushujun/LTR_retriever) - 识别LTR retrotransposons
 
 ## 31、抗性基因和毒力因子
+
 工具：
-- abricate（https://github.com/tseemann/abricate）：Mass screening of contigs for antimicrobial and virulence genes
-- ARIBA：https://github.com/sanger-pathogens/ariba  抗性基因检测（fastq序列作为输入）
-- SRST2：https://github.com/katholt/srst2 或者 http://katholt.github.io/srst2/
-- c-SSTAR：https://github.com/chrisgulvik/c-SSTAR
-- ARGs-OAP：https://github.com/biofuture/Ublastx_stageone 和 http://smile.hku.hk/SARGs
-  ARGs-OAP的文献：https://academic.oup.com/bioinformatics/article/32/15/2346/1743463
+
+- abricate：[abricate](https://github.com/tseemann/abricate) - Mass screening of contigs for antimicrobial and virulence genes
+- ARIBA：[ARIBA](https://github.com/sanger-pathogens/ariba) - 抗性基因检测（fastq序列作为输入）
+- SRST2：[SRST2](https://github.com/katholt/srst2) - [备用地址](http://katholt.github.io/srst2/)
+- c-SSTAR：[c-SSTAR](https://github.com/chrisgulvik/c-SSTAR)
+- ARGs-OAP：[ARGs-OAP](https://github.com/biofuture/Ublastx_stageone) - [备用地址](http://smile.hku.hk/SARGs)
+  ARGs-OAP的[文献](https://academic.oup.com/bioinformatics/article/32/15/2346/1743463)
   \# 注意，ARGs-OAP的输入文件为fastq
 
-- Meta-MARC：https://github.com/lakinsm/meta-marc  宏基因的耐药性基因检测
-- DeepARG：http://bench.cs.vt.edu/deeparg  一种从宏基因组学数据中预测抗生素耐药性基因的深度学习方法。
-  DeepARG文献：https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0401-z
-
-  
+- Meta-MARC：[Meta-MARC](https://github.com/lakinsm/meta-marc) - 宏基因的耐药性基因检测
+- DeepARG：[DeepARG](http://bench.cs.vt.edu/deeparg) - 一种从宏基因组学数据中预测抗生素耐药性基因的深度学习方法。
+  DeepARG[文献](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0401-z)
 
 Antimicrobial Resistance Gene Database：
-- ARDB： http://ardb.cbcb.umd.edu/index.html
-- BacMet （http://bacmet.biomedicine.gu.se/）: Antibacterial biocide and metal resistance genes database
-  \# BacMet 有配套检索注释工具，其执行如：
-   perl /sdg/database/BacMet_v1.1/BacMet-Scan_v1.1.pl -i ./final.scaffold.fa -o E6.3 -d /sdg/database/BacMet_v1.1/BacMet_EXP.704 -blast -e 0.00001 -cpu 10 -columns all -p 20 -table -report -counts -v
-- CARD：https://card.mcmaster.ca/
-- Resfams：http://www.dantaslab.org/resfams
-- NCBI Bacterial Antimicrobial Resistance Reference Gene Database：https://www.ncbi.nlm.nih.gov/bioproject/PRJNA313047
-- ARG-ANNOT：http://en.mediterranee-infection.com/article.php?laref=283%26titre=arg-annot
-- ResFinder：https://cge.cbs.dtu.dk/services/ResFinder/ ResFinder identifies acquired antimicrobial resistance genes and/or find chromosomal mutations in total or partial sequenced isolates of bacteria.
-  ResFinder：https://bitbucket.org/genomicepidemiology/resfinder
-- EcOH：https://github.com/katholt/srst2/tree/master/data
 
+- ARDB：[ARDB](http://ardb.cbcb.umd.edu/index.html)
+- BacMet：[BacMet](http://bacmet.biomedicine.gu.se/) - Antibacterial biocide and metal resistance genes database
+  \# BacMet 有配套检索注释工具，其执行如
+  perl /sdg/database/BacMet_v1.1/BacMet-Scan_v1.1.pl -i ./final.scaffold.fa -o E6.3 -d /sdg/database/BacMet_v1.1/BacMet_EXP.704 -blast -e 0.00001 -cpu 10 -columns all -p 20 -table -report -counts -v
+- CARD：[CARD](https://card.mcmaster.ca/)
+- Resfams：[Resfams](http://www.dantaslab.org/resfams)
+- NCBI Bacterial Antimicrobial Resistance Reference Gene Database：[NCBI Bacterial Antimicrobial Resistance Reference Gene Database](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA313047)
+- ARG-ANNOT：[ARG-ANNOT](http://en.mediterranee-infection.com/article.php?laref=283%26titre=arg-annot)
+- ResFinder：[ResFinder](https://cge.cbs.dtu.dk/services/ResFinder/) - ResFinder identifies acquired antimicrobial resistance genes and/or find chromosomal mutations in total or partial sequenced isolates of bacteria.
+  ResFinder：[链接](https://bitbucket.org/genomicepidemiology/resfinder)
+- EcOH：[EcOH](https://github.com/katholt/srst2/tree/master/data)
 
 ## 32、质粒序列检测
-- PlasmidFinder：https://cge.cbs.dtu.dk/services/PlasmidFinder/   PlasmidFinder identifies plasmids in total or partial sequenced isolates of bacteria. PlasmidFinder, which searches for matches in a replicon database, had the highest precision (1.0) but was restricted by the contents of its database and the contig length obtained from de novo assembly (recall = 0.33).
-  PlasmidFinder数据库下载链接：https://cge.cbs.dtu.dk//services/data.php
-- cBAR（http://csbl.bmb.uga.edu/~ffzhou/cBar/） recall and precision of 0.77 and 0.63.
-- Recycler（https://github.com/Shamir-Lab/Recycler） It correctly predicted small plasmids but failed with long plasmids (recall = 0.12, precision = 0.28).
-- PlasmidSPAdes（http://spades.bioinf.spbau.ru/plasmidSPAdes/）
-- PLACNET（https://sourceforge.net/projects/placnet/）
-- PLACNET2FASTA（https://github.com/tomdeman-bio/PLACNET2FASTA）：Converts PLACNET output to a FASTA file containing plasmid contigs 
 
+- PlasmidFinder：[PlasmidFinder](https://cge.cbs.dtu.dk/services/PlasmidFinder/) - PlasmidFinder identifies plasmids in total or partial sequenced isolates of bacteria. PlasmidFinder, which searches for matches in a replicon database, had the highest precision (1.0) but was restricted by the contents of its database and the contig length obtained from de novo assembly (recall = 0.33).
+  PlasmidFinder数据库下载链接：[下载](https://cge.cbs.dtu.dk//services/data.php)
+- cBAR：[cBAR](http://csbl.bmb.uga.edu/~ffzhou/cBar/) - recall and precision of 0.77 and 0.63.
+- Recycler：[Recycler](https://github.com/Shamir-Lab/Recycler) - It correctly predicted small plasmids but failed with long plasmids (recall = 0.12, precision = 0.28).
+- PlasmidSPAdes：[PlasmidSPAdes](http://spades.bioinf.spbau.ru/plasmidSPAdes/)
+- PLACNET：[PLACNET](https://sourceforge.net/projects/placnet/)
+- PLACNET2FASTA：[PLACNET2FASTA](https://github.com/tomdeman-bio/PLACNET2FASTA) - Converts PLACNET output to a FASTA file containing plasmid contigs
 
-## 33、微生物 
-- Nullarbor：https://github.com/tseemann/nullarbor  Pipeline to generate complete public health microbiology reports from sequenced isolates.
+## 33、微生物
 
+- Nullarbor：[Nullarbor](https://github.com/tseemann/nullarbor) - Pipeline to generate complete public health microbiology reports from sequenced isolates.
 
-## 34、
-Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php  计算calculated DNA–DNA hybridization (DDH) value。
+## 34、IS
 
+- ISMapper：[ISMapper](https://github.com/jhawkey/IS_mapper) - ISMapper finds locations of an IS query in short read data using a series of mapping steps.
 
-## 35、
-- MinCED：https://github.com/ctSkennerton/minced CRISPRs检测
-- CRT：http://www.room220.com/crt/  CRISPR Recognition Tool
+## 35、引物设计
 
-## 36、
-- Piggy（https://github.com/harry-thorpe/piggy）：Pipeline for analysing intergenic regions in bacteria
+- PrimerMapper：[PrimerMapper](https://github.com/dohalloran/PrimerMapper)
+- primer3：[primer3](https://github.com/primer3-org/primer3)
+- PrimerView：[PrimerView](https://github.com/dohalloran/PrimerView)
 
-## 37、IS
-- ISMapper（https://github.com/jhawkey/IS_mapper）ISMapper finds locations of an IS query in short read data using a series of mapping steps.
+## 36、甲基化
 
-## 38、
-- ncbi-genome-download（https://github.com/kblin/ncbi-genome-download）：Scripts to download genomes from the NCBI FTP servers。
-  示例：
-   ~/.pyenv/versions/3.5.2/bin/ncbi-genome-download -F fasta -g Vibrio -o Vibrio_genomes -p 16 -r 15 bacteria
+- Bismark：[Bismark](https://www.bioinformatics.babraham.ac.uk/projects/bismark/) - A tool to map bisulfite converted sequence reads and determine cytosine methylation states. (鉴定甲基化)
 
-   
-## 39、引物设计
-- PrimerMapper：https://github.com/dohalloran/PrimerMapper
-- primer3（https://github.com/primer3-org/primer3）
-- PrimerView（https://github.com/dohalloran/PrimerView）
+- seqtools：[seqtools](http://www.sanger.ac.uk/science/tools/seqtools) - The SeqTools package contains three tools for visualising sequence alignments: Blixem, Dotter and Belvu.
 
+## 37、转座因子
 
-## 40、
-- 蛋白功能注释分析的一些工具：https://classes.soe.ucsc.edu/bme225/Fall07/BME225.serverlist.html
-  https://classes.soe.ucsc.edu/bme225/Fall08/BME225.serverlist08.html
+- CLARI-TE：[CLARI-TE](https://github.com/jdaron/CLARI-TE) - Predicts Transposable Elements (TEs) in complexe genome such as wheat（小麦）.
 
-  
-## 41、
-- GWDSR：https://github.com/tigerxu/GWDSR
+## 38、重复序列分析
 
-- COV2HTML：https://mmonot.eu/COV2HTML/connexion.php  A Visualization and Analysis Tool of Bacterial Next Generation Sequencing (NGS) Data.
-
-
-## 42、甲基化
-- Bismark（https://www.bioinformatics.babraham.ac.uk/projects/bismark/）：A tool to map bisulfite converted sequence reads and determine cytosine methylation states. (鉴定甲基化)
-
-- seqtools：http://www.sanger.ac.uk/science/tools/seqtools The SeqTools package contains three tools for visualising sequence alignments: Blixem, Dotter and Belvu.
-
-
-## 43、转座因子
-- CLARI-TE：https://github.com/jdaron/CLARI-TE Predicts Transposable Elements (TEs) in complexe genome such as wheat（小麦）.
-
-
-## 44、重复序列分析
-- TRF：http://tandem.bu.edu/trf/trf.download.html
-- Msatfinder：http://www.bioinformatics.org/project/?group_id=469  https://github.com/knirirr/Msatfinder  Msatfinder is a simple Perl script that detects perfect microsatellite repeats (1-6 bp) in nucleic acid or protein sequences.
-- MISA - MIcroSAtellite identification tool：http://pgrc.ipk-gatersleben.de/misa/
-- msatcommander：http://www.softpedia.com/get/Science-CAD/msatcommander.shtml （windows平台）
-
+- TRF：[TRF](http://tandem.bu.edu/trf/trf.download.html)
+- Msatfinder：[Msatfinder](http://www.bioinformatics.org/project/?group_id=469) - [链接](https://github.com/knirirr/Msatfinder) Msatfinder is a simple Perl script that detects perfect microsatellite repeats (1-6 bp) in nucleic acid or protein sequences.
+- MISA - MIcroSAtellite identification tool：[MISA - MIcroSAtellite identification tool](http://pgrc.ipk-gatersleben.de/misa/)
+- msatcommander：[msatcommander](http://www.softpedia.com/get/Science-CAD/msatcommander.shtml) - windows平台
 
 拓展：
 
@@ -800,70 +728,109 @@ Genome-to-Genome Distance Calculator (GGDC)：http://ggdc.dsmz.de/distcalc2.php 
 
 3.ABI3730上，最终上机是检测荧光信号，引物5‘端荧光标记，这个检测量和速度很快，成本高，只有筛好引物，后续批量实验时，再上机。前期引物筛选，还是用普通引物（不带标记），跑PAGE胶，取20个左右样本，大概看下扩增片段，多态性，即可。
 
-首先你要有序列，不知你做的是什么物种。把这些序列输入到在线的：http://www.genomics.ceh.ac.uk/cgi-bin/msatfinder/msatfinder.cgi 网站中，确定微卫星所在的位置；然后在微卫星序列两翼设计引物。
+首先你要有序列，不知你做的是什么物种。把这些序列输入到在线的：[链接](http://www.genomics.ceh.ac.uk/cgi-bin/msatfinder/msatfinder.cgi) 网站中，确定微卫星所在的位置；然后在微卫星序列两翼设计引物。
 
+## 39、viewer
 
-## 45、viewer
-- SnapGene：http://www.snapgene.com/products/file_compatibility/GenBank/
+- SnapGene：[SnapGene](http://www.snapgene.com/products/file_compatibility/GenBank/)
 
+## 40、pfam工具
 
-## 46、pfam工具
-- Pfam_Scan（http://pfam.xfam.org/）：蛋白结构域的预测
-- PfamScan工具（ftp://ftp.ebi.ac.uk/pub/databases/Pfam/Tools/）
-- InterProscan官网 ：
-  http://www.ebi.ac.uk/interpro/
-  http://www.ebi.ac.uk/interpro/interproscan.html
+- Pfam_Scan：[Pfam_Scan](http://pfam.xfam.org/) - 蛋白结构域的预测
+- PfamScan工具：[PfamScan工具](ftp://ftp.ebi.ac.uk/pub/databases/Pfam/Tools/)
+- InterProscan官网：[InterProscan官网](http://www.ebi.ac.uk/interpro/)
+  [链接](http://www.ebi.ac.uk/interpro/interproscan.html)
 
-- AntiFam：ftp://ftp.ebi.ac.uk/pub/databases/Pfam/AntiFam/  识别假的ORF
-  AntiFam的文章：https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3308159/
-  http://xfam.org/
+- AntiFam：[AntiFam](ftp://ftp.ebi.ac.uk/pub/databases/Pfam/AntiFam/) - 识别假的ORF
+  AntiFam的[文章](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3308159/)
+  [链接](http://xfam.org/)
   如何执行AntiFam?
   hmmsearch --domtblout test_vs_antifam.out --tblout test_vs_antifam.out2 --domE 1e-10 --cpu 12 ../AntiFam.hmm test.faa
 
-- wKinMut-2：http://kinmut2.bioinfo.cnio.es/KinMut2  wKinMut-2 is an integrated framework for the analysis and interpretation of the consequences of variants in the human kinome.
-- GOTaxExplorer：http://gotax.bioinf.mpi-inf.mpg.de/  GOTaxExplorer presents a new approach to comparative genomics that integrates functional information and families with the taxonomic classification.
+- wKinMut-2：[wKinMut-2](http://kinmut2.bioinfo.cnio.es/KinMut2) - wKinMut-2 is an integrated framework for the analysis and interpretation of the consequences of variants in the human kinome.
+- GOTaxExplorer：[GOTaxExplorer](http://gotax.bioinf.mpi-inf.mpg.de/) - GOTaxExplorer presents a new approach to comparative genomics that integrates functional information and families with the taxonomic classification.
 
+## 41、基因结构分析
 
-## 47、其他工具
-- PathSeq：用PathSeq进行跨物种污染识别
-  https://software.broadinstitute.org/gatk/blog?id=23205
-  ftp://ftp.broadinstitute.org/bundle/pathseq/
-- SeqBench：https://seqbench.com/  A browser-based toolbox for everyday DNA, RNA, and protein sequence tasks.
-- COSMolKit：https://github.com/cosmol-studio/COSMolKit  Molecular graph, SMILES, SDF, InChI, SMARTS, fingerprint, descriptor, conformer, force-field, and structure utilities. Documentation: https://kit.cosmol.org/  Web tools: https://tools.cosmol.org/  PyPI: https://pypi.org/project/cosmolkit/  crates.io: https://crates.io/crates/cosmolkit
-- spatial-continuum-translational：https://github.com/Lukecele/spatial-continuum-translational  Reproducible Python and CLI research extensions for an explicit, uncalibrated GIST phenotype profile, with validated TSV/CSV/JSON inputs and deterministic component outputs. Research-only; not a clinical predictor. DOI: https://doi.org/10.21203/rs.3.rs-11633521/v1  Research hub: https://lucacelebrano.me/
+- GSDS：[GSDS](http://gsds.cbi.pku.edu.cn/)
 
-## 48、基因结构分析
-- GSDS：http://gsds.cbi.pku.edu.cn/
+## 42、数据库
 
+- 果蝇数据库：[果蝇数据库](http://flybase.org/)
 
-## 49、数据库
-果蝇数据库：http://flybase.org/
+- 酵母数据库：[酵母数据库](https://www.yeastgenome.org/)
+  
+  - 下载酵母数据：[下载酵母数据](https://www.yeastgenome.org/download-data)
 
-酵母数据库：https://www.yeastgenome.org/
+## 43、文献检索、下载
 
-下载酵母数据：https://www.yeastgenome.org/download-data
+（1）Library Genesis
 
+- gen.lib.rus.ec：[gen.lib.rus.ec](http://gen.lib.rus.ec) - 该网址速度比较快
+- libgen.io：[libgen.io](http://libgen.io) - 该网址速度较慢
+- libgen.io：[libgen.io/scimag](http://libgen.io/scimag/) - 该网址主要用于检索文章
 
-## 50、一些说明（小技巧）
+（2）Sci-hub
+
+- tool.yovisun.com：[tool.yovisun.com](http://tool.yovisun.com/scihub/)
+- sci-hub.tw：[sci-hub.tw](http://sci-hub.tw/)
+- sci-hub.shop：[sci-hub.shop](https://sci-hub.shop/)
+- sci-hub.org.cn：[sci-hub.org.cn](https://sci-hub.org.cn/)
+
+（3）BGPT MCP
+
+- github.com：[github.com](https://github.com/connerlambden/bgpt-mcp) - BGPT API - REST/Python and MCP scientific paper search returning structured experimental evidence, limitations, conflicts of interest, and data/code availability fields. MCP server for searching scientific papers with full-text experimental data. Supports SSE and Streamable HTTP endpoints.
+
+## 44、其他工具
+
+- PathSeq：[PathSeq](https://software.broadinstitute.org/gatk/blog?id=23205) - 用PathSeq进行跨物种污染识别
+  [链接](ftp://ftp.broadinstitute.org/bundle/pathseq/)
+- SeqBench：[SeqBench](https://seqbench.com/) - A browser-based toolbox for everyday DNA, RNA, and protein sequence tasks.
+- COSMolKit：[COSMolKit](https://github.com/cosmol-studio/COSMolKit) - Molecular graph, SMILES, SDF, InChI, SMARTS, fingerprint, descriptor, conformer, force-field, and structure utilities. Documentation: [文档](https://kit.cosmol.org/) Web tools: [工具](https://tools.cosmol.org/) PyPI: [PyPI](https://pypi.org/project/cosmolkit/) , crates.io: [crates.io](https://crates.io/crates/cosmolkit)
+- spatial-continuum-translational：[spatial-continuum-translational](https://github.com/Lukecele/spatial-continuum-translational) - Reproducible Python and CLI research extensions for an explicit, uncalibrated GIST phenotype profile, with validated TSV/CSV/JSON inputs and deterministic component outputs. Research-only; not a clinical predictor. DOI: [DOI](https://doi.org/10.21203/rs.3.rs-11633521/v1) Research hub: [页面](https://lucacelebrano.me/)
+- Genome-to-Genome Distance Calculator (GGDC)：[Genome-to-Genome Distance Calculator (GGDC)](http://ggdc.dsmz.de/distcalc2.php) - 计算calculated DNA–DNA hybridization (DDH) value。
+- MinCED：[MinCED](https://github.com/ctSkennerton/minced) - CRISPRs检测
+- CRT：[CRT](http://www.room220.com/crt/) - CRISPR Recognition Tool
+- Piggy：[Piggy](https://github.com/harry-thorpe/piggy) - Pipeline for analysing intergenic regions in bacteria
+- ncbi-genome-download：[ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) - Scripts to download genomes from the NCBI FTP servers。
+  示例
+  ~/.pyenv/versions/3.5.2/bin/ncbi-genome-download -F fasta -g Vibrio -o Vibrio_genomes -p 16 -r 15 bacteria
+- GWDSR：[GWDSR](https://github.com/tigerxu/GWDSR)
+- COV2HTML：[COV2HTML](https://mmonot.eu/COV2HTML/connexion.php) - A Visualization and Analysis Tool of Bacterial Next Generation Sequencing (NGS) Data.
+
+一些高校、研究所也有整理软件工具列表，如：
+
+- wiki.gacrc.uga.edu：[wiki.gacrc.uga.edu](https://wiki.gacrc.uga.edu/wiki/Main_Page)
+- wiki.rc.ufl.edu：[wiki.rc.ufl.edu](https://wiki.rc.ufl.edu/doc/Category:Software)
+- vcru.wisc.edu：[vcru.wisc.edu](http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/index.html)
+
+一些论坛也有类似的讨论帖，如 [链接](http://seqanswers.com/wiki/Software)
+
+我个人推荐一个网站，上面有很多的工具说明：[omictools](https://omictools.com/)
+
+## 45、一些说明（小技巧）
+
 适合于NGS数据的基因组组装软件
-1. ALLPATHS-LG
-2. Velvet
-3. SOAPdenovo
-4. Bambus2
-5. CABOG
-6. MSR-CA
-7. SGA
-8. VCAKE
-9. SHARCGS
-10. SSAKE
-11. Euler
+
+- ALLPATHS-LG
+- Velvet
+- SOAPdenovo
+- Bambus2
+- CABOG
+- MSR-CA
+- SGA
+- VCAKE
+- SHARCGS
+- SSAKE
+- Euler
 
 适合Sanger数据的基因组组装软件
-1. Newbler
-2. Celera
-3. CABOG
-4. Edena
-5. Shorty
+
+- Newbler
+- Celera
+- CABOG
+- Edena
+- Shorty
 
 组装的算法：
 
@@ -878,21 +845,3 @@ B)De Bruijn Graph(DBG) methods(use some form of K-mer graph)\
 C)Greey graph alogorithms（use OLC or DBG）
 
 软件：SSAKE、SHARCGS、VCAKE
-
-
-
-## 51、文献检索、下载
-
-（1）Library Genesis
-1. http://gen.lib.rus.ec（该网址速度比较快）
-2. http://libgen.io（该网址速度较慢）
-3. http://libgen.io/scimag/（该网址主要用于检索文章）
-
-（2）Sci-hub
-- http://tool.yovisun.com/scihub/
-- http://sci-hub.tw/
-- https://sci-hub.shop/
-- https://sci-hub.org.cn/
-
-（3）BGPT MCP
-- https://github.com/connerlambden/bgpt-mcp ：BGPT API - REST/Python and MCP scientific paper search returning structured experimental evidence, limitations, conflicts of interest, and data/code availability fields. MCP server for searching scientific papers with full-text experimental data. Supports SSE and Streamable HTTP endpoints.
