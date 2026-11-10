@@ -483,6 +483,7 @@ SV、CNV
 ## 19、外显子组相关的软件
 - CNV检测的软件：CoNIFER（http://conifer.sourceforge.net/）
 - SNP注释软件：annovar（http://annovar.openbioinformatics.org/en/latest/）
+- 变异解读：[Folklore](https://folklore.helena.bio/acmg-variant-classification) — 免费、无需注册的 ACMG/AMP 人类核基因组生殖系变异分类网页工具。每次查询一个受支持的 GRCh38 单核苷酸变异或小于 50 bp 的简单插入/缺失，支持 HGVS、SPDI、rsID 或坐标输入；展示自动分类、报告的判定标准、注释、证据及可用的来源链接，ClinVar 解读单独显示。临床使用前需由具备资质的专业人员复核。[BRCA1 示例](https://folklore.helena.bio/examples/acmg-variant-classification)。
 
 
 ## 20、GO注释
